@@ -1,3 +1,6 @@
+import $ from 'jquery'
+
+
 function qsort(array) {
     function qsortPart(low, high) {
       var i = low;

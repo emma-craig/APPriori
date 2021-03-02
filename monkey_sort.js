@@ -1,3 +1,6 @@
+import $ from 'jquery'
+
+
 // The comparison matrix
 function ComparisonMatrix(items) {
     var self = this;

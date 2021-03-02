@@ -1,3 +1,6 @@
+import $ from 'jquery'
+
+
 $(function() {
     var matrix;
     var items;
