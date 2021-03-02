@@ -1,4 +1,4 @@
-import $ from 'jquery'
+
 
 
 // The comparison matrix
