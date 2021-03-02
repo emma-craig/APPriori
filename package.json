@@ -1,0 +1,22 @@
+{
+  "name": "apppriori",
+  "version": "1.0.0",
+  "description": "",
+  "main": "monkey_sort.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmaryal/AppPriori.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmaryal/AppPriori/issues"
+  },
+  "homepage": "https://github.com/emmaryal/AppPriori#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
