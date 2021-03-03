@@ -16,6 +16,9 @@
 
   .wrapper {
     display: flex;
+  
+    justify-content: center;
+    align-items: center;
   }
   
   h1,
@@ -55,15 +58,18 @@
 
   #items {
     font-size: 2em;
-    padding: 2rem 0.5;
+    padding: 5rem 0.5rem;
     box-shadow: 0 0.4rem 1.4rem 0 #F08700;
     width: 200px;
     height: 200px;
     margin: 0 auto;
     display: block;
+
     text-align: center;
     align-items: center;
     font-family: monospace;
+    display: flex;
+    justify-content: center;
   }
 
 
@@ -109,7 +115,8 @@
   
   /* BUTTONS */
   .btn {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    font-weight: bold; 
     padding: 1rem 0;
     width: 20rem;
     text-align: center;
@@ -143,17 +150,17 @@ outline: none;
 
 
   .ask_answer {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-weight: bold;
-    padding: 1em 2em;
+    padding: 0.5rem 2rem;
     display: block;
     text-align: center;
     width: 200px;
-    margin: 1em auto;
+    margin: 1rem auto;
   }
   
   .ask_answer.dontcare {
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: normal;
     width: 200px;
   }
@@ -161,6 +168,31 @@ outline: none;
   #results_list {
     width: 400px;
     margin: 0 auto;
-    font-size: 3em;
+    font-size: 3rem;
     list-style-type: none;
+  }
+
+
+  /* media queries */
+
+  @media  (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+
+    #items {
+      font-size: 4em;
+      padding: 5rem 0.5rem;
+      box-shadow: 0 0.4rem 1.4rem 0 #F08700;
+      width: 80vw;
+      height: 60vh;
+      margin: 0 auto;
+      display: block;
+  
+      text-align: center;
+      align-items: center;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+    }
   }
