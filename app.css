@@ -187,7 +187,7 @@ outline: none;
       width: 80vw;
       height: 60vh;
       margin: 0 auto;
-      display: block;
+      display: flex;
   
       text-align: center;
       align-items: center;
