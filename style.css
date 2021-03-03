@@ -1,8 +1,8 @@
-body {
+/* body {
     font-family: sans-serif;
-  }
+  } */
   
-  #ask {
+  /* #ask {
     display: none
   }
   
@@ -13,29 +13,31 @@ body {
   #wrapper {
     width: 960px;
     margin: 0 auto;
-  }
+  } */
   
-  header, footer, h1, h2, h3 .centered { text-align: center }
+  /* header, footer, h1, h2, h3 .centered { text-align: center } */
   
-  h1 { font-size: 4em}
+  /* h1 { font-size: 4em} */
   
-  header { margin-bottom: 2em }
-  footer { margin-top: 2em }
+  /* header { margin-bottom: 2em }
+  footer { margin-top: 2em } */
   
-  #items {
-    font-size: 1em;
+  /* #items {
+    font-size: 2em;
     font-family: sans-serif;
     width: 200px;
     height: 300px;
     margin: 0 auto;
     display: block;
+    text-align: center;
+    font-family: monospace;
   }
   
   button {
     font-size: 1.5em;
     font-family: sans-serif;
-  }
-  
+  } */
+/*   
   .ask_answer {
     font-size: 1.5em;
     font-weight: bold;
@@ -56,4 +58,4 @@ body {
     width: 400px;
     margin: 0 auto;
     font-size: 1.2em;
-  }
+  } */

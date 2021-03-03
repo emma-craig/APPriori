@@ -2,6 +2,7 @@
 function ComparisonMatrix(items) {
   var self = this;
   self.items = items;
+  console.log("items-----", items)
   self.matrix = {};
   self.explicitCount = 0;
 
@@ -130,7 +131,7 @@ $(function () {
     $("#ask").hide();
     $("#results").show();
     $("#results_list").html();
-    $("#explicit_count").text(matrix.explicitCount);
+    // $("#explicit_count").text(matrix.explicitCount);
     _(items).each(function (item) {
       $("<li />").appendTo($("#results_list")).text(item);
     });
