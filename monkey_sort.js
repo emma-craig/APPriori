@@ -131,11 +131,14 @@ $(function () {
     $("#ask").hide();
     $("#results").show();
     $("#results_list").html();
+   
     $("#explicit_count").text(matrix.explicitCount);
     $("#explicit_count").show();
     _(items).each(function (item) {
       $("<li />").appendTo($("#results_list")).text(item);
-      console.log("explicit count", matrix.explicitCount)
+      // console.log("explicit count", matrix.explicitCount);
+      console.log("results list", results_list)
+
     });
   }
 

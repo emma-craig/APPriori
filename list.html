@@ -82,9 +82,21 @@ worse
         <div>
           <button id="start_over" class="btn">Start over</button>
 
-          <button id="save_list" class="btn">Share List</button>
+          <button id="save_list" onclick="download()" class="btn">Download List</button>
         </div>
       </div>
     </div>
   </body>
 </html>
+
+
+<script type="text/javascript">
+  function download() {
+      var a = document.body.appendChild(
+         document.createElement("a")
+      );
+     a.download = "myList.html";
+     a.href = "data:text/html," + document.getElementById("results_list").innerHTML;
+     a.click(); //Trigger a click on the element
+  }
+</script>

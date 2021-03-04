@@ -231,28 +231,7 @@ textarea:focus {
   }
 }
 
-/* media queries */
 
-@media (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-
-  /* #items {
-    font-size: 8em;
-    padding: 5rem 0.5rem;
-    box-shadow: 0 0.4rem 1.4rem 0 #f08700;
-    width: 80vw;
-    height: 60vh;
-    margin: 0 auto;
-
-    text-align: center;
-    align-items: center;
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-  } */
-}
 
 #explicit_count {
   font-size: large;
@@ -409,4 +388,26 @@ textarea:focus {
 #menuToggle input:checked ~ ul
 {
   transform: none;
+}
+
+
+/* media queries */
+
+@media (max-width: 600px) {
+  
+
+  #items {
+    font-size: 8em;
+    padding: 5rem 0.5rem;
+    box-shadow: 0 0.4rem 1.4rem 0 #f08700;
+    width: 80vw;
+    height: 60vh;
+    margin: 0 auto;
+
+    text-align: center;
+    align-items: center;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+  }
 }
