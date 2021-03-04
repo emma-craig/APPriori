@@ -4,8 +4,10 @@
     <title>MonkeySort</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="style.css" />
-
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
     <script>
@@ -20,45 +22,67 @@
     <script src="ui.js"></script>
   </head>
   <body>
-    <div id="wrapper">
-      <div id="input">
-        <br /><br />
+    <div id="wrapper" class="flex-column">
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="menu">
+            <a href="index.html"><li>Home</li></a>
+            <a href="mylists.html"><li>My Lists</li></a>
+            <a href="#"><li>Info</li></a>
+            <a href="#"><li>Contact</li></a>
+            
+          </ul>
+        </div>
+      </nav>
+      <div id="input" class="flex-column">
         <h3>Make a list of items to be sorted</h3>
         <br />
-        <br /><br />
-        <textarea id="items" class="flex-center">
+
+        <textarea id="items" class="flex-column textarea">
 good
 best
 better
 worst
 worse
-        </textarea>
-        <br />
-        <div class="centered">
+                    </textarea
+        >
+
+        <div>
           <button id="submit" class="btn">Sort it</button>
         </div>
       </div>
 
-      <div id="ask" class="hidden" >
-        <h2>Which one is better?</h2>
+      <div id="ask" class="input hidden">
+        <h2>Which do you prefer?</h2>
+
         <button id="ask_a" data-result=">" class="ask_answer btn">
           <span />
         </button>
         <button id="ask_b" data-result="<" class="ask_answer btn">
           <span />
         </button>
-        <button data-result="=" class="ask_answer dontcare btn">
-          don't care
-        </button>
+        <!-- <button data-result="=" class="ask_answer dontcare btn">
+                     don't care
+                   </button> -->
       </div>
+
       <div id="results" class="hidden">
         <h2>Your prioritised list</h2>
         <ol id="results_list"></ol>
-        <p class="centered">
-          <!-- Total number of comparisons needed: <span id="explicit_count"></span> -->
+        <br />
+        <p class="centered flex-column">
+          Total number of comparisons needed: <span id="explicit_count"></span>
         </p>
-        <div class="centered">
+        <div>
           <button id="start_over" class="btn">Start over</button>
+
+          <button id="save_list" class="btn">Share List</button>
         </div>
       </div>
     </div>
