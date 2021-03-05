@@ -397,8 +397,9 @@ textarea:focus {
   
 
   #items {
-    font-size: 8em;
-    padding: 5rem 0.5rem;
+    font-size: 4em;
+    padding: 2rem 0.5rem;
+  
     box-shadow: 0 0.4rem 1.4rem 0 #f08700;
     width: 80vw;
     height: 60vh;

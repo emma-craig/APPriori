@@ -8,6 +8,8 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
     </style>
+    <meta name="viewport" content="width=device-width, height=device-width, initial-scale=1">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
     <script>
@@ -43,13 +45,16 @@
       <div id="input" class="flex-column">
         <h3>Make a list of items to be sorted</h3>
         <br />
+        <br>
 
         <textarea id="items" class="flex-column textarea">
-good
-best
-better
-worst
-worse
+mar milan
+the goat
+emma letham
+mark
+raymond
+slutty rocio
+lovely nick
                     </textarea
         >
 
@@ -59,6 +64,7 @@ worse
       </div>
 
       <div id="ask" class="input hidden">
+        <br><br><br><br>
         <h2>Which do you prefer?</h2>
 
         <button id="ask_a" data-result=">" class="ask_answer btn">
@@ -73,6 +79,7 @@ worse
       </div>
 
       <div id="results" class="hidden">
+        <br><br><br>
         <h2>Your prioritised list</h2>
         <ol id="results_list"></ol>
         <br />
