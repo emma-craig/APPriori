@@ -8,20 +8,10 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
     </style>
-    <meta name="viewport" content="width=device-width, height=device-width, initial-scale=1">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="http://www.mywebsite.com/jquery.min.js"><\/script>'
-        );
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
-    <script src="monkey_sort.js"></script>
-    <script src="ui.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-width, initial-scale=1"
+    />
   </head>
   <body>
     <div id="wrapper" class="flex-column">
@@ -38,27 +28,36 @@
             <a href="mylists.html"><li>My Lists</li></a>
             <a href="#"><li>Info</li></a>
             <a href="#"><li>Contact</li></a>
-            
           </ul>
         </div>
       </nav>
       <div id="input" class="flex-column">
         <h3>Make a list of items to be sorted</h3>
+
+        <textarea id="items" class="flex-column textarea"> </textarea>
+
+        <div>
+          <button id="discard-button" class="btn">Trim list</button>
+        </div>
+      </div>
+
+      <div id="discard-page" class=" input hidden">
+        <h2>Discard this one?</h2>
+        <div id="to-be-discarded"></div>
         <br />
-        <br>
 
-        <textarea id="items" class="flex-column textarea">
-
-                    </textarea
-        >
-
+        <button id="discard-from-list-button" class="btn">
+          <span />discard
+        </button>
+        <button id="keep-in-list-button" class="btn"><span />keep</button>
+        <div id="trimResults" class="flex-column textarea"></div>
+<div id="show-trimmed"></div>
         <div>
           <button id="submit" class="btn">Sort it</button>
         </div>
       </div>
 
       <div id="ask" class="input hidden">
-        <br><br><br><br>
         <h2>Which do you prefer?</h2>
 
         <button id="ask_a" data-result=">" class="ask_answer btn">
@@ -73,7 +72,6 @@
       </div>
 
       <div id="results" class="hidden">
-        <br><br><br>
         <h2>Your prioritised list</h2>
         <ol id="results_list"></ol>
         <br />
@@ -81,23 +79,46 @@
           Total number of comparisons needed: <span id="explicit_count"></span>
         </p>
         <div>
-          <button id="start_over" class="btn">Start over</button>
-
-          <button id="save_list" onclick="download()" class="btn">Download List</button>
+          <!-- <button id="start_over" class="btn">Start over</button> -->
+<button class="btn" id="start_over_clean" >
+  Start over fresh list
+          </button>
+          <button id="start_over_same_list" class="btn">
+Start over same list
+          </button>
+      
+          <button id="save_list" onclick="download()" class="btn">
+            Download List
+          </button>
         </div>
       </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="http://www.mywebsite.com/jquery.min.js"><\/script>'
+        );
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+    <script src="monkey_sort.js"></script>
+    <script src="ui.js"></script>
+    <script type="text/javascript">
+      function download() {
+        var a = document.body.appendChild(document.createElement("a"));
+        a.download = "myList.html";
+        a.href =
+          "data:text/html," + document.getElementById("results_list").innerHTML;
+        a.click(); //Trigger a click on the element
+      }
+
+      // function discard(){
+      //   const a = document.getElementById("textarea");
+      //   console.log("item to be removed", a)
+      // }
+    </script>
   </body>
 </html>
-
-
-<script type="text/javascript">
-  function download() {
-      var a = document.body.appendChild(
-         document.createElement("a")
-      );
-     a.download = "myList.html";
-     a.href = "data:text/html," + document.getElementById("results_list").innerHTML;
-     a.click(); //Trigger a click on the element
-  }
-</script>
