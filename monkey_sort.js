@@ -2,7 +2,6 @@
 function ComparisonMatrix(items) {
   var self = this;
   self.items = items;
-  console.log("items-----", items);
   self.matrix = {};
   self.explicitCount = 0;
 
@@ -84,73 +83,96 @@ function quickSort(items, matrix) {
 
 $(function () {
   var matrix;
-  // var items;
   var lines = [];
   var items = [];
-
+  var counter = 0;
+///DISCARD DIV ///
   $("#discard-button").click(function () {
     $("#input").hide();
     $("#discard-page").show();
     $("#ask").hide();
+    $("#results").hide();
+
     var lines = [];
+    var items = [];
+    var counter = 0;
+
     //show each item in list
     $.each($("#items").val().split(/\n/), function (i, line) {
       if (line) {
         lines.push(line);
-      } else {
-        lines.push("");
+      } else if (line == /\n/) {
+        null;
+        // lines.push("");
       }
-    });
-    console.log("items from input:", lines);
+      let Uniq_lines = [...new Set(lines)]
+
+      // var Uniq_lines = lines.filter(function (elem, index, self) {
+      //   return index === self.indexOf(elem);
+      // });
+      console.log("unique lines array", Uniq_lines);
+      lines = [...Uniq_lines];
+      console.log("unique lines", lines);
+      localStorage.setItem("lines", lines);
+    }); // then do unique filter
+
+    // console.log("items from input:", lines);
 
     // localStorage.setItem("storedLines", JSON.stringify($("#items").val()));
-    localStorage.setItem("lines", lines);
-    console.log("lines length=", lines.length);
     
-
+    // console.log("lines length=", lines.length);
+    // console.log("counter:", counter);
     $("#to-be-discarded").html(lines[0]);
-  });
- 
-  let counter = 0;
-  function nextQuestion() {
-    lines = localStorage.getItem("lines").split(",");
-    console.log("LINES--", localStorage.getItem("lines"));
-    console.log("LINES from variable via localstorage--", lines);
-    // let linesArray = lines.split(",")
-    console.log("lines:", lines);
-    console.log("counter:", counter)
-    counter++;
-    $("#to-be-discarded").html(lines[counter]);
-    if (counter === lines.length) {
-      //7 elements in the array
-      $("#keep-in-list-button").hide();
-      $("#discard-from-list-button").hide();
-      $("#show-trimmed").text(items);
-      $("#submit").show();
+
+    $("#keep-in-list-button").show();
+    $("#discard-from-list-button").show();
+    items = [];
+
+    function nextQuestion() {
+      lines = localStorage.getItem("lines").split(",");
+      // console.log("LINES--", localStorage.getItem("lines"));
+      // console.log("LINES from variable via localstorage--", lines);
+      // let linesArray = lines.split(",")
+      counter++;
+      // console.log("lines:", lines);
+      // console.log("lines.length", lines.length);
+      // console.log("counter:", counter); //(? counter has not reset to zero)
+
+      $("#to-be-discarded").html(lines[counter]);
+      if (counter === lines.length) {
+        $("#keep-in-list-button").hide();
+        $("#discard-from-list-button").hide();
+        $("#show-trimmed").text(items);
+        $("#submit").show();
+      }
     }
-  }
 
-  // $("#to-be-discarded").html(lines[0]);
-
-  $("#discard-from-list-button").click(() => {
-    nextQuestion();
-    // lines.splice(0, 1);
-    console.log("discarded:", lines[counter - 1]);
     // $("#to-be-discarded").html(lines[0]);
+
+    $("#discard-from-list-button").click(() => {
+      nextQuestion();
+      // lines.splice(0, 1);
+      // console.log("discarded:", lines[counter]);
+      // $("#to-be-discarded").html(lines[0]);
+    });
+
+    $("#keep-in-list-button").click(() => {
+      // console.log("lines", lines);
+      // const added = lines.splice(0,1).slice(0,1)
+      // items.push(...added);
+      // $("#to-be-discarded").html(lines[1]);
+      // console.log("kept", lines[counter]);
+      items.push(lines[counter]);
+      // console.log("items aftertrimming", items);
+      localStorage.setItem("items", items);
+
+      nextQuestion();
+    });
   });
 
-  $("#keep-in-list-button").click(() => {
-    nextQuestion();
-    // console.log("lines", lines);
-    // const added = lines.splice(0,1).slice(0,1)
-    // items.push(...added);
-    // $("#to-be-discarded").html(lines[1]);
-    console.log("kept", lines[counter - 1]);
-    items.push(lines[counter - 1]);
-    console.log("items aftertrimming", items);
-  });
 
-  /////////////////////////////////////////////
+
+  ///ASK DIV///
   $("#submit").click(function (e) {
     e.preventDefault();
     // items = _(
@@ -162,12 +184,15 @@ $(function () {
     //     return s === "";
     //   })
     // ).uniq();
-    console.log("items after submitting trim", items);
+    var items = localStorage.getItem("items").split(",");
+    $("results").hide();
+    console.log("items after submitting trim (from local storage", items);
     matrix = new ComparisonMatrix(items);
     tryQuickSort();
   });
 
   function tryQuickSort() {
+    items = localStorage.getItem("items").split(",");
     try {
       quickSort(items, matrix);
       showResults();
@@ -180,6 +205,7 @@ $(function () {
     $("#input").hide();
     $("#discard-page").hide();
     $("#ask").show();
+    $("results").hide();
     $("#ask_a").text(a);
     $("#ask_b").text(b);
   }
@@ -193,6 +219,8 @@ $(function () {
     tryQuickSort();
   });
 
+
+    ///RESULTS DIV///
   function showResults() {
     $("#input").hide();
     $("#ask").hide();
@@ -202,40 +230,21 @@ $(function () {
     $("#explicit_count").text(matrix.explicitCount);
     $("#explicit_count").show();
     _(items).each(function (item) {
-     $("<li />").appendTo($("#results_list")).text(item);
-      console.log("explicit count", matrix.explicitCount);
-      console.log("results list", results_list);
+      $("<li />").appendTo($("#results_list")).text(item);
     });
   }
 
   $("#start_over_clean").click(function (e) {
-    // window.location.replace("list.html");
-    $("#discard-page").hide();
-    $("#results").hide();
-    $("#input").show();
-    //   lines=[];
-    //   items=[];
-    //   console.log("items at start over:", items);
-    //   console.log("lines at start over:", lines)
+    window.location.replace("list.html").reload();
+    lines = [];
+    items = [];
   });
 
   $("#start_over_same_list").click(function (e) {
-    // e.preventDefault(e);
-    // let lines = JSON.parse(localStorage.getItem("lines"));
-    //window.location.replace("list.html")
-
-    let lines = localStorage.getItem("lines");
-    console.log("lines from local storage", lines);
-    // window.location.replace("list.html")
-    //  lines = lines.join('/n').split()
-    //  console.log("lines from local storage", lines)
-    //   $("#results").hide();
+    lines = localStorage.getItem("lines").split(",").join("\n");
     $("#input").show();
-    //   lines=[];
-    //   items=[];
-    //   console.log("items at start over:", items);
-    //   console.log("lines at start over:", lines)
-
-    // $("#items").val(lines).show();
+    $("#results").hide()
+    $("#items").val(lines).show();
+    items = [];
   });
 });
