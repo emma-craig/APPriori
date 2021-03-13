@@ -26,39 +26,68 @@
           <ul id="menu">
             <a href="index.html"><li>Home</li></a>
             <a href="mylists.html"><li>My Lists</li></a>
-            <a href="#"><li>Info</li></a>
-            <a href="#"><li>Contact</li></a>
+            <a href="info.html"><li>Info</li></a>
+            <a href="contact.html"><li>Contact</li></a>
           </ul>
         </div>
       </nav>
+
+      <div >
+        <ul id="lang-selector">
+          maybe do this as flags
+        <li id="es" class="translate">castellano</li>
+        <li id="cat" class="translate">catala</li>
+        <li id="en" class="translate">english</li>
+      </ul>
+      </div>
+
       <div id="input" class="flex-column">
-        <h3>Make a list of items to be sorted</h3>
+        <h3 key="input-header" class="text lang">
+          Haz una lista de las cosas que quieres ordenar
+        </h3>
 
         <textarea id="items" class="flex-column textarea"> </textarea>
 
         <div>
-          <button id="discard-button" class="btn">Trim list</button>
+          <button id="discard-button" class="btn lang text" key="trim-button">
+            Recorta La Lista
+          </button>
+          <button id="submit-no-trim" class="btn text lang" key="submit-to-sort">
+            Sortear
+          </button>
         </div>
       </div>
 
-      <div id="discard-page" class=" input hidden">
-        <h2>Discard this one?</h2>
+      <div id="discard-page" class="input hidden">
+        <h2 key="discard-header" class="text lang">Quieres esto?</h2>
         <div id="to-be-discarded"></div>
         <br />
 
-        <button id="discard-from-list-button" class="btn">
-          <span />discard
+        <button
+          id="discard-from-list-button"
+          class="btn text lang"
+          key="discard-button"
+        >
+          <span />Quita?
         </button>
-        <button id="keep-in-list-button" class="btn"><span />keep</button>
+        <button
+          id="keep-in-list-button"
+          key="keep-in-list-button"
+          class="btn text lang"
+        >
+          <span />Guarda?
+        </button>
         <div id="trimResults" class="flex-column textarea"></div>
-<div id="show-trimmed"></div>
+        <div id="show-trimmed" class="hidden"></div>
         <div>
-          <button id="submit" class="btn">Sort it</button>
+          <button id="submit" class="btn text lang" key="submit-to-sort">
+            Sortear
+          </button>
         </div>
       </div>
 
       <div id="ask" class="input hidden">
-        <h2>Which do you prefer?</h2>
+        <h2 key="ask-header" class="text lang">Cual prefieres?</h2>
 
         <button id="ask_a" data-result=">" class="ask_answer btn">
           <span />
@@ -72,23 +101,36 @@
       </div>
 
       <div id="results" class="hidden">
-        <h2>Your prioritised list</h2>
+        <h2 key="results-header" class="text lang">Tu lista prioritzada</h2>
         <ol id="results_list"></ol>
         <br />
-        <p class="centered flex-column">
-          Total number of comparisons needed: <span id="explicit_count"></span>
+        <p class="centered flex-column text lang" key="explicit-count">
+          Numero de comparaciones: <span id="explicit_count"></span>
         </p>
         <div>
           <!-- <button id="start_over" class="btn">Start over</button> -->
-<button class="btn" id="start_over_clean" >
-  Start over fresh list
+          <button
+            class="btn text lang"
+            id="start_over_clean"
+            key="start-over-fresh-button"
+          >
+            reempezar de nuevo (crear lista nueva)
           </button>
-          <button id="start_over_same_list" class="btn">
-Start over same list
+          <button
+            id="start_over_same_list"
+            class="btn text lang"
+            key="start-over-same-button"
+          >
+            reempezar de nuevo (la misma lista)
           </button>
-      
-          <button id="save_list" onclick="download()" class="btn">
-            Download List
+
+          <button
+            id="save_list"
+            onclick="download()"
+            class="btn text lang"
+            key="download-list"
+          >
+            Baja Lista
           </button>
         </div>
       </div>
@@ -119,6 +161,63 @@ Start over same list
       //   const a = document.getElementById("textarea");
       //   console.log("item to be removed", a)
       // }
+      var arrLang = {
+        en: {
+          "input-header": "Make a list of items to be sorted",
+          "trim-button": "Trim Your List",
+          "discard-header": "Discard this one?",
+          "discard-button": "Discard?",
+          "keep-in-list-button": "Keep?",
+          "submit-to-sort": "Sort",
+          "ask-header": "Which do you prefer?",
+          "results-header": "Your prioritised list",
+          "explicit-count": "Total number of comparisons needed: ",
+          "start-over-fresh-button": "start over with fresh list",
+          "start-over-same-button": "start over with same list",
+          "download-list": "Download List",
+        },
+
+        es: {
+          "input-header": "Haz una lista de las cosas que quieres ordenar",
+          "trim-button": "Recorta La Lista",
+          "discard-header": "Quieres esto?",
+          "discard-button": "Quita?",
+          "keep-in-list-button": "Guarda?",
+          "submit-to-sort": "Sortear",
+          "ask-header": "Cual prefieres?",
+          "results-header": "Tu lista prioritzada",
+          "explicit-count": "Numero de comparaciones: ",
+          "start-over-fresh-button": "reempezar de nuevo (crear lista nueva)",
+          "start-over-same-button": "reempezar de nuevo (la misma lista)",
+          "download-list": "Descargar Lista",
+        },
+
+        cat: {
+          "input-header": "Fes una llista de les coses que vols sortear",
+          "trim-button": "Recorte la llista",
+          "discard-header": "Vols aquest?",
+          "discard-button": "Quita aquest?",
+          "keep-in-list-button": "Guarda?",
+          "submit-to-sort": "Sortear",
+          "ask-header": "Quina prefereixis?",
+          "results-header": "La teva llista prioritzada",
+          "explicit-count": "Nombre de comparacions requerits: ",
+          "start-over-fresh-button": "comença de nou (crea llista nova)",
+          "start-over-same-button": "comença de nou (la mateixa llista)",
+          "download-list": "Descargar Llista",
+        },
+      };
+      $(function () {
+        $(".translate").click(function () {
+          var lang = $(this).attr("id");
+          console.log("language changed");
+          console.log("language:", lang);
+
+          $(".lang").each(function (index, element) {
+            $(this).text(arrLang[lang][$(this).attr("key")]);
+          });
+        });
+      });
     </script>
   </body>
 </html>
