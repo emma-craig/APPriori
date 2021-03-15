@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
 
-@-webkit-keyframes wobble-hor-bottom {
+/* @-webkit-keyframes wobble-hor-bottom {
   0%,
   100% {
     -webkit-transform: translateX(0%);
@@ -58,9 +58,9 @@
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
             transform: translateX(-6px) rotate(-1.2deg);
   }
-}
+} */
 
-@-webkit-keyframes tracking-in-contract-bck {
+/* @-webkit-keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(400px);
@@ -75,12 +75,12 @@
             transform: translateZ(0);
     opacity: 1;
   }
-}
+} */
 @keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(400px);
-            transform: translateZ(400px);
+    transform: translateZ(400px);
     opacity: 0;
   }
   40% {
@@ -88,15 +88,15 @@
   }
   100% {
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
 
-
 :root {
-  background-color: #efca08;
-
+  /* background-color: #efca08; */
+  background-image: url("./gradienta-gwE9vXSi7Xw-unsplash.jpg") ;
+background-size: 100% auto;
   font-size: 62.5%;
   /* width: 100vw;
   height: 100vh; */
@@ -119,18 +119,46 @@
   height: 100vh;
 }
 .wrapper {
-  
   align-items: center;
   display: flex;
   height: 100vh;
   justify-content: center;
+  width: 100vw;
+
+}
+
+
+.container {
+  /* width: 100vw;
+  height: 100vh; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* max-width: 80rem; */
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.container > * {
   width: 100%;
+}
+
+/* #trimResults , #results {
+  width: 50vw;
+  height: 30vh;
+  background-color: blanchedalmond;
+  margin: 4rem auto;
+} */
+
+ol > li {
+  list-style-type: none;
 }
 
 h1,
 h2,
 h3,
-h4,body,
+h4,
+body,
 header,
 footer .centred {
   /* margin: 2rem ; */
@@ -163,32 +191,35 @@ h3 {
   text-align: center;
 }
 
-#items {
-
+#input-items, #trimResults, #results_list {
   box-shadow: 0 0.4rem 1.4rem 0 #f08700;
   font-family: monospace;
   font-size: 3rem;
   height: 40vh;
-  margin: 0 auto;
+  margin: 4rem auto;
   padding: 2rem 0.5rem;
   width: 40vw;
+  background-color: blanchedalmond;
 }
 
 #lang-selector {
-
-  display:flex;
+  display: flex;
   justify-content: flex-end;
   list-style: none;
-  
 }
 
-#lang-selector >li {
-
-
+#lang-selector > li {
   padding: 5px 10px;
+  font-size: 2rem;
 }
 
+.img-flag {
+  width: 3rem;
+}
 
+lang-selector>li:hover {
+ cursor: pointer;
+}
 /* .textarea {
   font-size: 4rem;
   padding: 5rem 0.5rem;
@@ -202,38 +233,24 @@ h3 {
 
 /* UTILITIES */
 
-.container {
-  /* width: 100vw;
-  height: 100vh; */
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  /* max-width: 80rem; */
-  margin: 0 auto;
-  padding:15px;
-}
 
-.container > * {
-  width: 100%;
-}
 
 .flex-column {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
 }
 
 .flex-center {
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .flex-header {
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -265,7 +282,6 @@ h3 {
   width: auto;
 }
 
-
 a:focus,
 button:focus,
 input:focus,
@@ -279,6 +295,16 @@ textarea:focus {
   transform: translateY(-0.1rem);
   transition: transform 150ms;
 }
+
+#lang-selector>li:hover{
+  cursor: pointer;
+  color: #f08700;
+}
+
+#lang-selector>li:focus {
+  color: red;
+}
+
 
 .btn[disabled]:hover {
   box-shadow: none;
@@ -302,7 +328,7 @@ textarea:focus {
   width: 50vw;
 }
 
-#results_list {
+#results_list, #show-trimmed, #2left {
   font-size: 3rem;
   list-style-type: none;
   margin: 0 auto;
@@ -340,25 +366,11 @@ textarea:focus {
   }
 }
 
-
-
 #explicit_count {
   font-size: large;
 }
 
-
-
-
-
-
-
-
-
-
-#menuToggle
-{
-  
-  
+#menuToggle {
   -webkit-user-select: none;
   display: block;
   left: 15px;
@@ -369,25 +381,18 @@ textarea:focus {
   z-index: 1;
 }
 
-#menuToggle a
-{
+#menuToggle a {
   text-decoration: none;
   color: #232323;
-  
+
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
-{
+#menuToggle a:hover {
   color: tomato;
 }
 
-
-#menuToggle input
-{
-  
-  
-  
+#menuToggle input {
   -webkit-touch-callout: none;
   cursor: pointer;
   display: block;
@@ -403,13 +408,9 @@ textarea:focus {
 /*
  * Just a quick hamburger
  */
-#menuToggle span
-{
-  
-  
-  
-  
-  background: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);opacity: 0.55s ease;
+#menuToggle span {
+  background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  opacity: 0.55s ease;
   background: #070707;
   border-radius: 3px;
   display: block;
@@ -417,18 +418,16 @@ textarea:focus {
   margin-bottom: 5px;
   position: relative;
   transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   width: 33px;
   z-index: 1;
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
@@ -436,8 +435,7 @@ textarea:focus {
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
@@ -446,8 +444,7 @@ textarea:focus {
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -455,8 +452,7 @@ textarea:focus {
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -464,49 +460,59 @@ textarea:focus {
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
-{
-  
-  
-  
+
+ #home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  background-image: "gradienta-gwE9vXSi7Xw-unsplash.jpg";
+ }
+
+ #home >a {
+   width: 35vw;
+   margin: 0 auto;
+ 
+ }
+#menu {
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  background:#f08700;
+  background: #f08700;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  justify-content: center;
   list-style-type: none;
   margin: -100px 0 0 -50px;
-  padding-top: 125px;
+  /* padding-top: 125px; */
   padding: 50px;
   position: absolute;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 1s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1);
   width: 100vw;
+
 }
 
-#menu li
-{
-  padding: 10px 0;
-  font-size:3.5rem;
+#menu li {
+  padding: 0 10vw 5vw 0;
+  font-size: 3.5rem;
+  
 }
+
+
 
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul {
   transform: none;
 }
-
 
 /* media queries */
 
 @media (max-width: 600px) {
-  
-
   #items {
-
-  
     align-items: center;
     box-shadow: 0 0.4rem 1.4rem 0 #f08700;
     display: flex;
@@ -522,8 +528,9 @@ textarea:focus {
   }
 }
 
-
 .tracking-in-contract-bck {
-	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	        animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  -webkit-animation: tracking-in-contract-bck 1s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
 }

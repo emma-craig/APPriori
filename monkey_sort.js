@@ -54,9 +54,8 @@ function ComparisonMatrix(items) {
 
 // This is the very simplest form of quick sort.
 // Unknown comparison interrupt is done inside the matrix.get() method
-function quickSort(items, matrix) {
-  var array = items;
-  console.log("items (array) in quicksort fn", array); //!!!!! keeps adding the deleted items
+function quickSort(x, matrix) {
+  var array = x;
   function qsortPart(low, high) {
     var i = low;
     var j = high;
@@ -83,11 +82,11 @@ function quickSort(items, matrix) {
 }
 
 $(function () {
- 
   var matrix;
-  // var lines = [];
-  // var items = [];
-  // var count = 0;
+
+  var lines;
+
+  var count = 0;
 
   ///DISCARD DIV ///
   $("#discard-button").click(function () {
@@ -102,133 +101,77 @@ $(function () {
     var count = 0;
 
     //show each item in list
-    $.each($("#items").val().split(/\n/), function (i, line) {
+    $.each($("#input-items").val().split(/\n/), function (i, line) {
       if (line) {
         lines.push(line);
-      } else if (line == /\n/) {
+      } else if (line == /\n/ || line == "") {
         null;
         // lines.push("");
       }
     });
 
-    console.log("lines from text input", lines);
-    let Uniq_lines = [...new Set(lines)];
+    lines = [...new Set(lines)];
+    localStorage.setItem("lines", [...lines]);
 
     // var Uniq_lines = lines.filter(function (elem, index, self) {
     //   return index === self.indexOf(elem);
     // });
-    console.log("unique lines array", Uniq_lines);
-    lines = [...Uniq_lines];
-    console.log("unique lines", lines);
-    localStorage.setItem("lines", [...lines]);
-    console.log("lines[0]", lines[0]);
-    // then do unique filter
 
-    // console.log("items from input:", lines);
-
-    // localStorage.setItem("storedLines", JSON.stringify($("#items").val()));
-
-    // console.log("lines length=", lines.length);
-    // console.log("count:", count);
-    $("#to-be-discarded").html(lines[0]);
+    $("#to-be-discarded").html(lines[count]);
 
     $("#keep-in-list-button").show();
     $("#discard-from-list-button").show();
-    items = [];
 
     function nextQuestion() {
       count++;
-      // lines = localStorage.getItem("lines").split(",");
-      // console.log("LINES--", localStorage.getItem("lines"));
-      // console.log("LINES from variable via localstorage--", lines);
-      // let linesArray = lines.split(",")
-
-      console.log("lines:", lines);
-      console.log("lines.length", lines.length);
-      console.log("count:", count); //(? count has not reset to zero)
-      console.log("items", items);
 
       $("#to-be-discarded").html(lines[count]);
-      if (count === lines.length) {
-        $("#to-be-discarded").hide();
-        $("#keep-in-list-button").hide();
+      items = lines.filter((x) => x !== "*");
+      localStorage.setItem("items", [...items]);
+      $("#trimResults").text(items).show();
+
+      items.length === 2 ? $("#2left").show() : null;
+
+      if (count === lines.length || items.length === 2) {
         $("#discard-from-list-button").hide();
-        $("h2").hide();
-        $("#show-trimmed").text(items);
+        $("#keep-in-list-button").hide();
+        $("#to-be-discarded").hide();
+        $("#discard-header").hide();
+
         $("#submit").show();
       }
     }
 
-    // $("#to-be-discarded").html(lines[0]);
-
     $("#discard-from-list-button").click(() => {
+      var newlines = lines.splice(count, 1, "*");
+
+      items.push(newlines[0]);
+
       nextQuestion();
-      // lines.splice(0, 1);
-      // console.log("discarded:", lines[count]);
-      // $("#to-be-discarded").html(lines[0]);
     });
 
     $("#keep-in-list-button").click(() => {
-      // console.log("lines", lines);
-      // const added = lines.splice(0,1).slice(0,1)
-      // items.push(...added);
-      // $("#to-be-discarded").html(lines[1]);
-      // console.log("kept", lines[count]);
-      items.push(lines[count]);
-
-      // console.log("items aftertrimming", items);
-      localStorage.setItem("items", items); //overwrites items array
-
       nextQuestion();
     });
-  });
-
-  $("#submit-no-trim").click(function (e) {
-    e.preventDefault();
-    // items = _(
-    //   _(
-    //     _($("#items").val().split("\n")).map(function (s) {
-    //       return s.trim();
-    //     })
-    //   ).reject(function (s) {
-    //     return s === "";
-    //   })
-    // ).uniq();
-    var items = localStorage.getItem("items").split(",");
-    $("results").hide();
-    console.log("items after skipping  trim (from local storage", items);
-    matrix = new ComparisonMatrix(items);
-    tryQuickSort();
   });
 
   ///ASK DIV///
   $("#submit").click(function (e) {
     e.preventDefault();
-    // items = _(
-    //   _(
-    //     _($("#items").val().split("\n")).map(function (s) {
-    //       return s.trim();
-    //     })
-    //   ).reject(function (s) {
-    //     return s === "";
-    //   })
-    // ).uniq();
+
     var items = localStorage.getItem("items").split(",");
     $("results").hide();
-    console.log("items after submitting trim (from local storage", items);
     matrix = new ComparisonMatrix(items);
     tryQuickSort();
   });
 
   function tryQuickSort() {
-    t = localStorage.getItem("items").split(",");
-    console.log("items (t) in quicksort fn", t);
+    items = localStorage.getItem("items").split(",");
     try {
-      quickSort(t, matrix);
+      quickSort(items, matrix);
       showResults();
     } catch (e) {
-      // console.log("catch", e);
-      askUser(e.items[0], e.items[1]); //these are items from comparison matrix
+      askUser(e.items[0], e.items[1]);
     }
   }
 
@@ -246,7 +189,6 @@ $(function () {
     var a = $("#ask_a").text();
     var b = $("#ask_b").text();
     var result = $(this).data("result");
-    console.log("result:", result)
     matrix.set(a, b, result);
     tryQuickSort();
   });
@@ -269,14 +211,5 @@ $(function () {
     window.location.replace("list.html").reload();
     lines = [];
     items = [];
-  });
-
-  $("#start_over_same_list").click(function (e) {
-    lines = localStorage.getItem("lines").split(",").join("\n");
-    $("#input").show();
-    $("#results").hide();
-    $("#items").val(lines).show();
-    items = [];
-    count1 = 0;
   });
 });
