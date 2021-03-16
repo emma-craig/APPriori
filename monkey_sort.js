@@ -136,17 +136,14 @@ console.log("items", items)
 
 
       localStorage.setItem("items", [...items]);
-      var itemsTrimmed = localStorage.getItem("items").split(",").join(" \n");
-      $("#trimResults").text(itemsTrimmed).show();
+      // $("#trimResults").text(items).show();
 
       items.length === 2 ? $("#twoLeft").show() : null;
 
       if (count === lines.length || items.length === 2) {
-        $("#discard-from-list-button").hide();
-        $("#keep-in-list-button").hide();
-        $("#to-be-discarded").hide();
-        $("#discard-header").hide();
-
+     
+  $("#keep-in-list-button").prop('disabled', true); 
+  $("#to-be-discarded").prop('disabled', true); 
         $("#submit").show();
       }
     }

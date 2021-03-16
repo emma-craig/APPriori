@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MonkeySort</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://emmaryal.github.io/ChoiceGame/favicon.ico"
+    />
+    <title>AppPriori</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="app.css" />
     <!-- <link rel="stylesheet" href="style.css" /> -->
@@ -54,7 +59,7 @@
           Haz una lista de las cosas que quieres ordenar
         </h3>
 
-        <textarea id="input-items" class="flex-column textarea"> </textarea>
+        <textarea id="input-items" class="flex-column textarea"></textarea>
 
         <div>
           <a id="discard-button" class="btn lang text" key="trim-button">
@@ -64,10 +69,10 @@
       </div>
 
       <div id="discard-page" class="input hidden">
-        <h2 id="discard-header" key="discard-header" class="text lang">
-          Quieres esto?
-        </h2>
-        <div id="to-be-discarded"></div>
+        <h3 id="discard-header" key="discard-header" class="text lang">
+          Quieres quitar esto?
+        </h3>
+       <h2><div id="to-be-discarded" class="flex-center flex-column"></div></h2>
         <br />
 
         <a
@@ -85,14 +90,16 @@
           <span />Guarda?
         </a>
         <div>
-          <h3>Your list after trimming</h3>
-          <div id="trimResults" class="flex-column textarea"></div>
+          <!-- <h3>Your list after trimming</h3>
+          <div id="trimResults" class="flex-column textarea"></div> -->
           <div id="twoLeft" key="2left" class="text lang hidden">
             Solo quedan 2 opciones
           </div>
         </div>
         <!-- <div id="show-trimmed" ></div> -->
-       <br><br><br><br>
+        <br /><br /><br /><br />
+        <h2></h2>
+        <br><br><br><br>
         <div>
           <a id="submit" class="btn text lang hidden" key="submit-to-sort">
             Sortear
@@ -109,7 +116,7 @@
 
       <div id="ask" class="input hidden">
         <h2 key="ask-header" class="text lang">Cual prefieres?</h2>
-        <br><br><br><br>
+        <br /><br /><br /><br />
 
         <a id="ask_a" data-result=">" class="ask_answer btn">
           <span />
@@ -123,9 +130,9 @@
         <h2 key="results-header" class="text lang">Tu lista prioritzada</h2>
         <ol id="results_list"></ol>
         <br />
-        <p class="centered flex-column text lang" key="explicit-count">
+        <!-- <p class="centered flex-column text lang" key="explicit-count">
           Numero de comparaciones: <span id="explicit_count"></span>
-        </p>
+        </p> -->
         <div id="finish-buttons">
           <!-- <button id="start_over" class="btn">Start over</button> -->
           <button
@@ -134,7 +141,7 @@
             key="start-over-fresh-button"
           >
             reempezar
-        </button>
+          </button>
 
           <button
             id="save_list"
@@ -143,7 +150,7 @@
             key="download-list"
           >
             Descargar Lista
-        </button>
+          </button>
         </div>
       </div>
     </div>
@@ -189,7 +196,7 @@
         es: {
           "input-header": "Haz una lista de las cosas que quieres ordenar",
           "trim-button": "Recorta La Lista",
-          "discard-header": "Quieres esto?",
+          "discard-header": "Quieres quitar esto?",
           "discard-button": "Quita?",
           "keep-in-list-button": "Guarda?",
           "2left": "Solo quedan 2 opciones",
