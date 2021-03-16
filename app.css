@@ -95,8 +95,8 @@
 
 :root {
   /* background-color: #efca08; */
-  background-image: url("./gradienta-gwE9vXSi7Xw-unsplash.jpg") ;
-background-size: 100% auto;
+  background-image: url("./gradienta-gwE9vXSi7Xw-unsplash.jpg");
+  background-size: 100% auto;
   font-size: 62.5%;
   /* width: 100vw;
   height: 100vh; */
@@ -124,9 +124,7 @@ background-size: 100% auto;
   height: 100vh;
   justify-content: center;
   width: 100vw;
-
 }
-
 
 .container {
   /* width: 100vw;
@@ -191,15 +189,19 @@ h3 {
   text-align: center;
 }
 
-#input-items, #trimResults, #results_list {
+#input-items,
+#trimResults,
+#results_list {
+  background-color: blanchedalmond;
   box-shadow: 0 0.4rem 1.4rem 0 #f08700;
   font-family: monospace;
   font-size: 3rem;
   height: 40vh;
   margin: 4rem auto;
   padding: 2rem 0.5rem;
+  white-space: pre-wrap;
   width: 40vw;
-  background-color: blanchedalmond;
+ 
 }
 
 #lang-selector {
@@ -217,8 +219,16 @@ h3 {
   width: 3rem;
 }
 
-lang-selector>li:hover {
- cursor: pointer;
+#twoLeft {
+  padding: 10px;
+}
+
+#submit {
+  margin-top: 40px;
+}
+
+lang-selector > li:hover {
+  cursor: pointer;
 }
 /* .textarea {
   font-size: 4rem;
@@ -231,9 +241,21 @@ lang-selector>li:hover {
   font-family: monospace;
 } */
 
+#to-be-discarded {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  border: 5px;
+}
+
+finish-buttons {
+  align-items: center;
+  display: flex;
+
+  justify-content: center;
+  width: 100vw;
+}
+
 /* UTILITIES */
-
-
 
 .flex-column {
   display: flex;
@@ -296,15 +318,14 @@ textarea:focus {
   transition: transform 150ms;
 }
 
-#lang-selector>li:hover{
+#lang-selector > li:hover {
   cursor: pointer;
   color: #f08700;
 }
 
-#lang-selector>li:focus {
+#lang-selector > li:focus {
   color: red;
 }
-
 
 .btn[disabled]:hover {
   box-shadow: none;
@@ -328,7 +349,9 @@ textarea:focus {
   width: 50vw;
 }
 
-#results_list, #show-trimmed, #2left {
+#results_list,
+#show-trimmed,
+#2left {
   font-size: 3rem;
   list-style-type: none;
   margin: 0 auto;
@@ -461,19 +484,18 @@ textarea:focus {
  * at the top left of the screen
  */
 
- #home {
+#home {
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   background-image: "gradienta-gwE9vXSi7Xw-unsplash.jpg";
- }
+}
 
- #home >a {
-   width: 35vw;
-   margin: 0 auto;
- 
- }
+#home > a {
+  width: 35vw;
+  margin: 0 auto;
+}
 #menu {
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -491,16 +513,12 @@ textarea:focus {
   transform: translate(-100%, 0);
   transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1);
   width: 100vw;
-
 }
 
 #menu li {
   padding: 0 10vw 5vw 0;
   font-size: 3.5rem;
-  
 }
-
-
 
 /*
  * And let's slide it in from the left

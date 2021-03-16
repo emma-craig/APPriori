@@ -127,10 +127,19 @@ $(function () {
 
       $("#to-be-discarded").html(lines[count]);
       items = lines.filter((x) => x !== "*");
-      localStorage.setItem("items", [...items]);
-      $("#trimResults").text(items).show();
+   
+console.log("items", items)
+      
+      
+      
 
-      items.length === 2 ? $("#2left").show() : null;
+
+
+      localStorage.setItem("items", [...items]);
+      var itemsTrimmed = localStorage.getItem("items").split(",").join(" \n");
+      $("#trimResults").text(itemsTrimmed).show();
+
+      items.length === 2 ? $("#twoLeft").show() : null;
 
       if (count === lines.length || items.length === 2) {
         $("#discard-from-list-button").hide();
