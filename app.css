@@ -171,7 +171,7 @@ h1 {
   color: navy;
   font-family: "Abril Fatface", cursive;
   font-size: 10.4rem;
-  margin-bottom: 5rem;
+  margin: 5rem auto;
 }
 
 h1 > span {
@@ -181,7 +181,7 @@ h1 > span {
 
 h2 {
   font-size: 4.2rem;
-  margin-bottom: 4rem;
+  margin: 4rem auto;
   font-weight: 700;
   /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
 }
@@ -189,8 +189,15 @@ h2 {
 h3 {
   font-size: 2.8rem;
   font-weight: 500;
-  margin-top: 10vh;
+  margin: 4rem auto;
   text-align: center;
+  background-color: rgba(255, 99, 71, 0.678);
+  border-radius: 3rem;
+  color: whitesmoke;
+  
+  width: 80vw;
+  padding: 2rem;
+
 }
 
 h3 span {
@@ -202,9 +209,12 @@ h3 span {
 #input-items,
 #trimResults,
 #results_list {
-  background-image: url("white-paper-background.jpg");
+  
+  /* background-image: url("white-paper-background.jpg"); */
+  background-color: tomato;
   background-size: 100% auto;
   border: none;
+  border-radius: 3rem;
   box-shadow: 0 0.4rem 1.4rem 0 gray;
   font-family: monospace;
   font-size: 3rem;

@@ -142,8 +142,12 @@ console.log("items", items)
 
       if (count === lines.length || items.length === 2) {
      
-  $("#keep-in-list-button").prop('disabled', true); 
-  $("#to-be-discarded").prop('disabled', true); 
+  // $("#keep-in-list-button").prop('disabled', true); 
+  // $("#discard-from-list-button").prop('disabled', true); 
+  $("#discard-header").hide();
+  $("#to-be-discarded").hide();
+  $("#keep-in-list-button").hide(); 
+  $("#discard-from-list-button").hide(); 
         $("#submit").show();
       }
     }
