@@ -95,7 +95,8 @@
 
 :root {
   /* background-color: #efca08; */
-  background-image: url("./yellow-background.jpg");
+  /* background-image: url("./yellow-background.jpg"); */
+  background-color: lemonchiffon;
   background-size: cover;
   font-size: 62.5%;
 
@@ -105,6 +106,8 @@
 
 body {
   height: 100vh;
+  background-color: lemonchiffon;
+
 }
 
 * {
@@ -497,7 +500,8 @@ textarea:focus {
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  background-image: "./yellow-background.jpg";
+  margin: 0;
+  /* background-image: "./yellow-background.jpg"; */
 }
 
 #home > a {
