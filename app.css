@@ -625,4 +625,22 @@ textarea:focus {
     text-decoration: none;
     width: auto;
   }
+
+  .img-flag {
+    width: 2rem;
+  }
+
+
+  #lang-selector {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-right: 1.3rem;
+  }
+  
+  #lang-selector > li {
+    padding: 2px 5px;
+    font-size: 2rem;
+  }
+
 }
