@@ -363,6 +363,25 @@ finish-buttons {
   width: auto;
 }
 
+.big-btn {
+  /* border: 0.1rem solid #BBDEF0; */
+  background-color: white;
+  border-color: tomato;
+  border-radius: 25px;
+  color: gray;
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 4rem;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+}
+
+.big-btn:hover {
+  color: tomato
+}
+
 a:focus,
 button:focus,
 input:focus,
