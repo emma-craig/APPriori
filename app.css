@@ -195,7 +195,7 @@ h3 {
   border-radius: 3rem;
   color: whitesmoke;
   
-  width: 80vw;
+  width: fit-content;
   padding: 2rem;
 
 }
@@ -304,6 +304,11 @@ lang-selector > li:hover {
 discard-page {
   display: flex;
   justify-content: space-around;
+}
+
+#discard-header {
+  width:fit-content;
+  padding: 1.5rem;
 }
 
 finish-buttons {
