@@ -28,7 +28,19 @@
         </div>
       </nav>
 
-
+      <div>
+        <ul id="lang-selector">
+          <li id="es" class="translate">
+            ES
+          </li>
+          <li id="cat" class="translate">
+            CAT
+          </li>
+          <li id="en" class="translate">
+            EN
+          </li>
+        </ul>
+      </div>
 
 
 
@@ -36,13 +48,101 @@
         <!-- <div id="logo">
           <img src="apprior_teal.png" width=200px alt="app priori logo">
         </div> -->
-        <h1 class="tracking-in-contract-bck">App Priori</h1>
-        <a class="btn" href="list.html">Create a List</a>
+        <h1 class="tracking-in-contract-bck">Appriori</h1>
+        <a class="btn text lang" href="list.html" key="create-a-list">Create a List</a>
     
        
         <!-- <a class="btn" href="mylists.html">My Lists</a> -->
       </div>
     
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="http://www.mywebsite.com/jquery.min.js"><\/script>'
+        );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+    <script src="monkey_sort.js"></script>
+    <script src="ui.js"></script>
+    <script type="text/javascript">
+      function download() {
+        var a = document.body.appendChild(document.createElement("a"));
+        a.download = "myList.html";
+        a.href =
+          "data:text/html," + document.getElementById("results_list").innerHTML;
+        a.click(); //Trigger a click on the element
+      }
+
+      // var arrLang = {
+      //   en: {
+      //     "create-a-list": "Create a list",
+      //     "input-header": "Make a list of items to be sorted",
+      //     "trim-button": "Trim Your List",
+      //     "discard-header": "Discard this one?",
+      //     "discard-button": "Discard?",
+      //     "keep-in-list-button": "Keep?",
+      //     "2left": "You only have two items left in the list",
+      //     "submit-to-sort": "Sort",
+      //     "ask-header": "Which do you prefer?",
+      //     "results-header": "Your prioritised list",
+      //     "explicit-count": "Total number of comparisons needed: ",
+      //     "start-over-fresh-button": "start over with fresh list",
+      //     "start-over-same-button": "start over with same list",
+      //     "download-list": "Download List",
+      //   },
+
+      //   es: {
+      //     "create-a-list": "Haz una lista",
+
+      //     "input-header": "Haz una lista de las cosas que quieres ordenar",
+      //     "trim-button": "Recorta La Lista",
+      //     "discard-header": "Quieres quitar esto?",
+      //     "discard-button": "Quita?",
+      //     "keep-in-list-button": "Guarda?",
+      //     "2left": "Solo quedan 2 opciones",
+      //     "submit-to-sort": "Sortear",
+      //     "ask-header": "Cual prefieres?",
+      //     "results-header": "Tu lista prioritzada",
+      //     "explicit-count": "Numero de comparaciones: ",
+      //     "start-over-fresh-button": "reempezar de nuevo (crear lista nueva)",
+      //     "start-over-same-button": "reempezar de nuevo (la misma lista)",
+      //     "download-list": "Descargar Lista",
+      //   },
+
+      //   cat: {
+      //     "create-a-list": "Fes una llista",
+
+      //     "input-header": "Fes una llista de les coses que vols sortear",
+      //     "trim-button": "Recorte la llista",
+      //     "discard-header": "Vols aquest?",
+      //     "discard-button": "Quita aquest?",
+      //     "keep-in-list-button": "Guarda?",
+      //     "2left": "Només quedan dues opciones",
+      //     "submit-to-sort": "Sortear",
+      //     "ask-header": "Quina prefereixis?",
+      //     "results-header": "La teva llista prioritzada",
+      //     "explicit-count": "Nombre de comparacions requerits: ",
+      //     "start-over-fresh-button": "comença de nou (crea llista nova)",
+      //     "start-over-same-button": "comença de nou (la mateixa llista)",
+      //     "download-list": "Descargar Llista",
+      //   },
+      // };
+     
+      //   $(".translate").click(function () {
+      //     var lang = $(this).attr("id");
+      //     console.log("language changed");
+      //     console.log("language:", lang);
+
+      //     $(".lang").each(function (index, element) {
+      //       $(this).text(arrLang[lang][$(this).attr("key")]);
+      //     });
+      //   });
+      
+    </script>
+
+
   </body>
 </html>

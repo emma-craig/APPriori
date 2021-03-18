@@ -222,4 +222,70 @@ console.log("items", items)
     lines = [];
     items = [];
   });
+
+  var arrLang = {
+    en: {
+      "create-a-list": "Create a list",
+      "input-header": "Make a list of items to be sorted",
+      "trim-button": "Trim Your List",
+      "discard-header": "Discard this one?",
+      "discard-button": "Discard?",
+      "keep-in-list-button": "Keep?",
+      "2left": "You only have two items left in the list",
+      "submit-to-sort": "Sort",
+      "ask-header": "Which do you prefer?",
+      "results-header": "Your prioritised list",
+      "explicit-count": "Total number of comparisons needed: ",
+      "start-over-fresh-button": "start over with fresh list",
+      "start-over-same-button": "start over with same list",
+      "download-list": "Download List",
+    },
+
+    es: {
+      "create-a-list": "Haz una lista",
+
+      "input-header": "Haz una lista de las cosas que quieres ordenar",
+      "trim-button": "Recorta La Lista",
+      "discard-header": "Quieres quitar esto?",
+      "discard-button": "Quita?",
+      "keep-in-list-button": "Guarda?",
+      "2left": "Solo quedan 2 opciones",
+      "submit-to-sort": "Sortear",
+      "ask-header": "Cual prefieres?",
+      "results-header": "Tu lista prioritzada",
+      "explicit-count": "Numero de comparaciones: ",
+      "start-over-fresh-button": "reempezar de nuevo (crear lista nueva)",
+      "start-over-same-button": "reempezar de nuevo (la misma lista)",
+      "download-list": "Descargar Lista",
+    },
+
+    cat: {
+      "create-a-list": "Fes una llista",
+
+      "input-header": "Fes una llista de les coses que vols sortear",
+      "trim-button": "Recorte la llista",
+      "discard-header": "Vols aquest?",
+      "discard-button": "Quita aquest?",
+      "keep-in-list-button": "Guarda?",
+      "2left": "Només quedan dues opciones",
+      "submit-to-sort": "Sortear",
+      "ask-header": "Quina prefereixis?",
+      "results-header": "La teva llista prioritzada",
+      "explicit-count": "Nombre de comparacions requerits: ",
+      "start-over-fresh-button": "comença de nou (crea llista nova)",
+      "start-over-same-button": "comença de nou (la mateixa llista)",
+      "download-list": "Descargar Llista",
+    },
+  };
+
+$(".translate").click(function () {
+  var lang = $(this).attr("id");
+  console.log("language changed");
+  console.log("language:", lang);
+
+  $(".lang").each(function (index, element) {
+    $(this).text(arrLang[lang][$(this).attr("key")]);
+  });
+});
+
 });
