@@ -53,14 +53,19 @@
       </div>
 
       <div id="input" class="flex-column">
-        <h3 key="input-header" class="text lang">
+        <div key="input-header" class=" info text lang">
          <!-- <div class="glass-wrap"><div class = "glass">Haz una lista de las cosas que quieres ordenar</div>
         </div>   -->
       
       Haz una lista de las cosas que quieres ordenar
-      </h3>
-
+      </div>
+<div class="notepad-wrapper">
         <textarea id="input-items" class="flex-column textarea"></textarea>
+
+      </div>
+
+
+
 
         <div>
           <a id="discard-button" class="btn lang text" key="trim-button">
@@ -70,9 +75,9 @@
       </div>
 
       <div id="discard-page" class="input hidden">
-        <h3 id="discard-header" key="discard-header" class="text lang">
-          Quieres quitar esto?
-        </h3>
+        <div  id="discard-header" key="discard-header" class=" info text lang">
+          <!-- Quieres quitar esto? -->
+        </div>
        <h1 id="to-be-discarded" class="flex-center flex-column"></h1>
         <br /><br><br>
 
@@ -103,7 +108,7 @@
         <br><br><br><br>
         <div>
           <a id="submit" class="big-btn text lang hidden" key="submit-to-sort">
-            Sortear
+            Ordenar
           </a>
           <a
             class="btn text lang hidden"
