@@ -87,9 +87,36 @@ $(function () {
   var lines;
 
   var count = 0;
-//////STRAIGHT TO SORT //////
+  //////STRAIGHT TO SORT //////
 
+  $("#sort-now-button").click(function () {
+    $("#input").hide();
+    $("#to-be-discarded").hide();
+    $("#discard-page").hide();
+    $("#ask").show();
+    $("#results").hide();
+    var lines = [];
+    var items = [];
+    var count = 0;
+    //show each item in list
+    $.each($("#input-items").val().split(/\n/), function (i, line) {
+      if (line) {
+        items.push(line);
+      } else if (line == /\n/ || line == "") {
+        null;
+        // lines.push("");
+      }
+    });
+    items = [...new Set(items)];
+    localStorage.setItem("items", [...items]);
+    console.log("items in sort now", items);
+    $("results").hide();
+    matrix = new ComparisonMatrix(items);
+    tryQuickSort();
 
+    localStorage.setItem("items", [...items]);
+    console.log("items in sort now", items);
+  });
 
   ///DISCARD DIV ///
   $("#discard-button").click(function () {
@@ -130,13 +157,8 @@ $(function () {
 
       $("#to-be-discarded").html(lines[count]);
       items = lines.filter((x) => x !== "*");
-   
-console.log("items", items)
-      
-      
-      
 
-
+      console.log("items", items);
 
       localStorage.setItem("items", [...items]);
       // $("#trimResults").text(items).show();
@@ -144,13 +166,12 @@ console.log("items", items)
       items.length === 2 ? $("#twoLeft").show() : null;
 
       if (count === lines.length || items.length === 2) {
-     
-  // $("#keep-in-list-button").prop('disabled', true); 
-  // $("#discard-from-list-button").prop('disabled', true); 
-  $("#discard-header").hide();
-  $("#to-be-discarded").hide();
-  $("#keep-in-list-button").hide(); 
-  $("#discard-from-list-button").hide(); 
+        // $("#keep-in-list-button").prop('disabled', true);
+        // $("#discard-from-list-button").prop('disabled', true);
+        $("#discard-header").hide();
+        $("#to-be-discarded").hide();
+        $("#keep-in-list-button").hide();
+        $("#discard-from-list-button").hide();
         $("#submit").show();
       }
     }
@@ -173,6 +194,8 @@ console.log("items", items)
     e.preventDefault();
 
     var items = localStorage.getItem("items").split(",");
+    console.log(items);
+
     $("results").hide();
     matrix = new ComparisonMatrix(items);
     tryQuickSort();
@@ -180,6 +203,7 @@ console.log("items", items)
 
   function tryQuickSort() {
     items = localStorage.getItem("items").split(",");
+    console.log(items);
     try {
       quickSort(items, matrix);
       showResults();
@@ -228,8 +252,8 @@ console.log("items", items)
 
   var arrLang = {
     en: {
-      "menu-home" : "Home",
-      "menu-create" : "Create a list",
+      "menu-home": "Home",
+      "menu-create": "Create a list",
       "menu-contact": "Contact",
       "create-a-list": "Create a list",
       "input-header": "Type a list of items to be sorted",
@@ -248,8 +272,8 @@ console.log("items", items)
     },
 
     es: {
-      "menu-home" : "Inicio",
-      "menu-create" : "Crear una lista",
+      "menu-home": "Inicio",
+      "menu-create": "Crear una lista",
       "menu-contact": "Contacto",
       "create-a-list": "Haz una lista",
 
@@ -269,8 +293,8 @@ console.log("items", items)
     },
 
     cat: {
-      "menu-home" : "Inici",
-      "menu-create" : "Crear una llista",
+      "menu-home": "Inici",
+      "menu-create": "Crear una llista",
       "menu-contact": "Contacte",
       "create-a-list": "Fes una llista",
 
@@ -290,14 +314,13 @@ console.log("items", items)
     },
   };
 
-$(".translate").click(function () {
-  var lang = $(this).attr("id");
-  console.log("language changed");
-  console.log("language:", lang);
+  $(".translate").click(function () {
+    var lang = $(this).attr("id");
+    console.log("language changed");
+    console.log("language:", lang);
 
-  $(".lang").each(function (index, element) {
-    $(this).text(arrLang[lang][$(this).attr("key")]);
+    $(".lang").each(function (index, element) {
+      $(this).text(arrLang[lang][$(this).attr("key")]);
+    });
   });
-});
-
 });
