@@ -6,7 +6,7 @@
       type="image/x-icon"
       href="https://emmaryal.github.io/ChoiceGame/favicon.ico"
     />
-    <title>AppPriori</title>
+    <title>APPriori</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="app.css" />
     <!-- <link rel="stylesheet" href="style.css" /> -->
@@ -29,11 +29,10 @@
           <span></span>
 
           <ul id="menu">
-            <a href="index.html"><li>Home</li></a>
-            <a href="list.html"><li>Create a List</li></a> 
-            <a href="info.html"><li>Info</li></a>
-            <a href="contact.html"><li>Contact</li></a>
-            
+            <a href="index.html"><li  key="menu-home" class="text lang">Home</li></a>
+            <a href="list.html"><li key="menu-create" class="text lang">Create a List</li></a>
+            <a href="info.html"><li key="menu-info" class="text lang">Info</li></a>
+            <a href="contact.html"><li key="menu-contact" class="text lang">Contact</li></a>
           </ul>
         </div>
       </nav>
@@ -41,61 +40,61 @@
       <div>
         <ul id="lang-selector">
           <li id="es" class="translate">
-            ES
+            ESP
           </li>
           <li id="cat" class="translate">
             CAT
           </li>
           <li id="en" class="translate">
-            EN
+            ENG
           </li>
         </ul>
       </div>
 
       <div id="input" class="flex-column">
-        <div key="input-header" class=" info text lang">
-         <!-- <div class="glass-wrap"><div class = "glass">Haz una lista de las cosas que quieres ordenar</div>
+        <div key="input-header" class="info text lang">
+          <!-- <div class="glass-wrap"><div class = "glass">Haz una lista de las cosas que quieres ordenar</div>
         </div>   -->
-      
-      Haz una lista de las cosas que quieres ordenar
-      </div>
-<div class="notepad-wrapper">
-        <textarea id="input-items" class="flex-column textarea"></textarea>
 
-      </div>
-
-
-
+          Haz una lista de las cosas que quieres ordenar
+        </div>
+        <div class="notepad-wrapper">
+          <textarea id="input-items" class="flex-column textarea"></textarea>
+        </div>
 
         <div>
           <a id="discard-button" class="btn lang text" key="trim-button">
             Recorta La Lista
           </a>
+          <a id="sort-now-button" class="btn lang text" key="sort-now-button">
+            Straight to sort
+          </a>
         </div>
       </div>
 
       <div id="discard-page" class="input hidden">
-        <div  id="discard-header" key="discard-header" class=" info text lang">
+        <div id="discard-header" key="discard-header" class="info text lang">
           <!-- Quieres quitar esto? -->
         </div>
-       <h1 id="to-be-discarded" class="flex-center flex-column"></h1>
-        <br /><br><br>
+        <h1 id="to-be-discarded" class="flex-center flex-column"></h1>
+        <br /><br /><br />
 
         <a
           id="discard-from-list-button"
           class="btn text lang"
           key="discard-button"
         >
-          <span />Quita?
+          <span />Descartar
         </a>
         <a
           id="keep-in-list-button"
           key="keep-in-list-button"
           class="btn text lang"
         >
-          <span />Guarda?
+          <span />Conservar
         </a>
-        <div><br><br>
+        <div>
+          <br /><br />
           <!-- <h3>Your list after trimming</h3>
           <div id="trimResults" class="flex-column textarea"></div> -->
           <div id="twoLeft" key="2left" class="text lang hidden">
@@ -105,7 +104,7 @@
         <!-- <div id="show-trimmed" ></div> -->
         <br /><br /><br /><br />
         <h2></h2>
-        <br><br><br><br>
+        <br /><br /><br /><br />
         <div>
           <a id="submit" class="big-btn text lang hidden" key="submit-to-sort">
             Ordenar
@@ -120,7 +119,8 @@
         </div>
       </div>
 
-      <div id="ask" class="input hidden"><br><br>
+      <div id="ask" class="input hidden">
+        <br /><br />
         <h2 key="ask-header" class="text lang">Cual prefieres?</h2>
         <br /><br /><br /><br />
 
@@ -133,7 +133,7 @@
       </div>
 
       <div id="results" class="hidden">
-        <br><br>
+        <br /><br />
         <h2 key="results-header" class="text lang">Tu lista prioritzada</h2>
         <ol id="results_list"></ol>
         <br />
@@ -177,77 +177,19 @@
     <script type="text/javascript">
       function download() {
         var a = document.body.appendChild(document.createElement("a"));
-        a.download = "myList.html";
+        a.download = "myList.pdf";
         a.href =
-          "data:text/html," + document.getElementById("results_list").innerHTML;
+          "data:text/pdf," + document.getElementById("results_list").innerHTML;
         a.click(); //Trigger a click on the element
       }
 
-      // var arrLang = {
-      //   en: {
-      //     "create-a-list": "Create a list",
-      //     "input-header": "Make a list of items to be sorted",
-      //     "trim-button": "Trim Your List",
-      //     "discard-header": "Discard this one?",
-      //     "discard-button": "Discard?",
-      //     "keep-in-list-button": "Keep?",
-      //     "2left": "You only have two items left in the list",
-      //     "submit-to-sort": "Sort",
-      //     "ask-header": "Which do you prefer?",
-      //     "results-header": "Your prioritised list",
-      //     "explicit-count": "Total number of comparisons needed: ",
-      //     "start-over-fresh-button": "start over with fresh list",
-      //     "start-over-same-button": "start over with same list",
-      //     "download-list": "Download List",
-      //   },
 
-      //   es: {
-      //     "create-a-list": "Haz una lista",
+    
 
-      //     "input-header": "Haz una lista de las cosas que quieres ordenar",
-      //     "trim-button": "Recorta La Lista",
-      //     "discard-header": "Quieres quitar esto?",
-      //     "discard-button": "Quita?",
-      //     "keep-in-list-button": "Guarda?",
-      //     "2left": "Solo quedan 2 opciones",
-      //     "submit-to-sort": "Sortear",
-      //     "ask-header": "Cual prefieres?",
-      //     "results-header": "Tu lista prioritzada",
-      //     "explicit-count": "Numero de comparaciones: ",
-      //     "start-over-fresh-button": "reempezar de nuevo (crear lista nueva)",
-      //     "start-over-same-button": "reempezar de nuevo (la misma lista)",
-      //     "download-list": "Descargar Lista",
-      //   },
 
-      //   cat: {
-      //     "create-a-list": "Fes una llista",
 
-      //     "input-header": "Fes una llista de les coses que vols sortear",
-      //     "trim-button": "Recorte la llista",
-      //     "discard-header": "Vols aquest?",
-      //     "discard-button": "Quita aquest?",
-      //     "keep-in-list-button": "Guarda?",
-      //     "2left": "Només quedan dues opciones",
-      //     "submit-to-sort": "Sortear",
-      //     "ask-header": "Quina prefereixis?",
-      //     "results-header": "La teva llista prioritzada",
-      //     "explicit-count": "Nombre de comparacions requerits: ",
-      //     "start-over-fresh-button": "comença de nou (crea llista nova)",
-      //     "start-over-same-button": "comença de nou (la mateixa llista)",
-      //     "download-list": "Descargar Llista",
-      //   },
-      // };
-      // $(function () {
-      //   $(".translate").click(function () {
-      //     var lang = $(this).attr("id");
-      //     console.log("language changed");
-      //     console.log("language:", lang);
 
-      //     $(".lang").each(function (index, element) {
-      //       $(this).text(arrLang[lang][$(this).attr("key")]);
-      //     });
-      //   });
-      // });
+
     </script>
   </body>
 </html>

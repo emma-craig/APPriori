@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/emmaryal/AppPriori#readme",
   "dependencies": {
-    "jquery": "^3.6.0"
+    "dom-to-pdf": "^0.2.0",
+    "jquery": "^3.6.0",
+    "print-js": "^1.6.0"
   }
 }

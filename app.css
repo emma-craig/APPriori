@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
 /* @-webkit-keyframes wobble-hor-bottom {
   0%,
   100% {
@@ -151,6 +152,7 @@ body {
 ol > li {
   list-style-type: decimal;
   text-align: left;
+  font-family: "Reenie Beanie", cursive;
 }
 
 h1 {
@@ -199,7 +201,7 @@ h3 span {
   /* background-image: url("white-paper-background.jpg"); */
   border: none;
   box-shadow: 0 0.4rem 1.4rem 0 gray;
-  font-family: monospace;
+  font-family: "Reenie Beanie", cursive;
   font-size: 20px;
   height: 60vh;
   margin: 3rem auto;
@@ -567,7 +569,6 @@ textarea:focus {
     height: 45vh;
     margin: 4rem auto;
     overflow: auto;
-    padding: 2rem 0.5rem;
     white-space: pre-wrap;
     width: 70vw;
   }

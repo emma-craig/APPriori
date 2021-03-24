@@ -1,22 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
-
-
-$color-paper:#ffffcc;
-$color-binding:#b34646;
-$color-line-rule:#cce0ff;
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+$color-paper: #ffffcc;
+$color-binding: #b34646;
+$color-line-rule: #cce0ff;
 $color-margin-rule: #ffcccc;
 $color-text: #555;
-$color-shadow:rgba(0, 0, 0, .1);
+$color-shadow: rgba(0, 0, 0, 0.1);
 $font-size-header: 1.2rem;
 $font-size: 1rem;
-$line-height:3rem;
+$line-height: 3rem;
 $rule-spacing: $line-height;
-$rule-width:2px;
+$rule-width: 2px;
 $binding-height: 60px;
-$margin-width:90px;
-$content-margin:20px;
-$header-height:90px;
+$margin-width: 90px;
+$content-margin: 20px;
+$header-height: 90px;
 $pad-width: 425px;
 $pad-height: 550px;
 
@@ -126,7 +125,6 @@ $pad-height: 550px;
 body {
   height: 100vh;
   background-color: lemonchiffon;
-
 }
 
 * {
@@ -136,13 +134,11 @@ body {
   font-family: monospace;
   margin: 0;
   padding: 0;
- text-align: center;
+  text-align: center;
 }
 .input {
   height: 100vh;
 }
-
-
 
 .wrapper {
   align-items: center;
@@ -177,6 +173,7 @@ body {
 ol > li {
   list-style-type: decimal;
   text-align: left;
+  font-family: 'Reenie Beanie', cursive;
 }
 
 // h1,
@@ -217,10 +214,9 @@ h3 {
   background-color: rgba(255, 99, 71, 0.678);
   border-radius: 3rem;
   color: whitesmoke;
-  
+
   width: fit-content;
   padding: 2rem;
-
 }
 
 h3 span {
@@ -232,22 +228,25 @@ h3 span {
 #input-items,
 #trimResults,
 #results_list {
-  
-
   background-color: #fff;
-background-image: 
-  linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-  linear-gradient(#eee .1em, transparent .1em);
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
   background-size: 100% 1.2em;
-
 
   /* background-image: url("white-paper-background.jpg"); */
   // background-color: lemonchiffon;
   // background-size: 100% auto;
   border: none;
-  
+
   box-shadow: 0 0.4rem 1.4rem 0 gray;
-  font-family: monospace;
+  // font-family: monospace;
+  font-family: 'Reenie Beanie', cursive;
   font-size: 20px;
   height: 60vh;
   margin: 3rem auto;
@@ -257,13 +256,6 @@ background-image:
   white-space: pre-wrap;
   width: 40vw;
 }
-
-
-
-
-
-
-
 
 // .glass-wrap {
 //   width: 100vw;
@@ -346,7 +338,7 @@ discard-page {
 }
 
 #discard-header {
-  width:fit-content;
+  width: fit-content;
   padding: 1.5rem;
 }
 
@@ -397,7 +389,7 @@ finish-buttons {
   /* border: 0.1rem solid #BBDEF0; */
   background-color: rgba(255, 99, 71, 0.678);
   border-radius: 25px;
-  color:whitesmoke;
+  color: whitesmoke;
   font-size: 2rem;
   font-weight: bold;
   margin: 4rem;
@@ -423,7 +415,7 @@ finish-buttons {
 }
 
 .big-btn:hover {
-  color: tomato
+  color: tomato;
 }
 
 a:focus,
@@ -475,7 +467,7 @@ textarea:focus {
 #show-trimmed,
 #twoLeft {
   font-size: 3rem;
-  list-style-type:decimal;
+  list-style-type: decimal;
   margin: 0 auto;
   width: 400px;
 }
@@ -651,7 +643,7 @@ textarea:focus {
     height: 45vh;
     margin: 4rem auto;
     overflow: auto;
-    padding: 2rem 0.5rem;
+    // padding: 2rem 0.5rem;
     white-space: pre-wrap;
     width: 70vw;
   }
@@ -674,17 +666,15 @@ textarea:focus {
     width: 2rem;
   }
 
-
   #lang-selector {
     display: flex;
     justify-content: flex-end;
     list-style: none;
     margin-right: 1.3rem;
   }
-  
+
   #lang-selector > li {
     padding: 2px 5px;
     font-size: 2rem;
   }
-
 }

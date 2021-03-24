@@ -87,6 +87,9 @@ $(function () {
   var lines;
 
   var count = 0;
+//////STRAIGHT TO SORT //////
+
+
 
   ///DISCARD DIV ///
   $("#discard-button").click(function () {
@@ -225,15 +228,18 @@ console.log("items", items)
 
   var arrLang = {
     en: {
+      "menu-home" : "Home",
+      "menu-create" : "Create a list",
+      "menu-contact": "Contact",
       "create-a-list": "Create a list",
-      "input-header": "Make a list of items to be sorted",
-      "trim-button": "Trim Your List",
+      "input-header": "Type a list of items to be sorted",
+      "trim-button": "Trim list before sorting",
       "discard-header": "Discard this one?",
       "discard-button": "Discard?",
       "keep-in-list-button": "Keep?",
       "2left": "You only have two items left in the list",
       "submit-to-sort": "Sort",
-      "ask-header": "Which do you prefer?",
+      "ask-header": "Which do you choose?",
       "results-header": "Your prioritised list",
       "explicit-count": "Total number of comparisons needed: ",
       "start-over-fresh-button": "start over with fresh list",
@@ -242,39 +248,45 @@ console.log("items", items)
     },
 
     es: {
+      "menu-home" : "Inicio",
+      "menu-create" : "Crear una lista",
+      "menu-contact": "Contacto",
       "create-a-list": "Haz una lista",
 
-      "input-header": "Haz una lista de las cosas que quieres ordenar",
-      "trim-button": "Recorta La Lista",
-      "discard-header": "Quieres quitar esto?",
-      "discard-button": "Quita?",
-      "keep-in-list-button": "Guarda?",
+      "input-header": "Escribe una lista de cosas para ordenar",
+      "trim-button": "Recortar lista antes de ordenar",
+      "discard-header": "Descartar o conserver este tem?",
+      "discard-button": "Descartar",
+      "keep-in-list-button": "Conservar",
       "2left": "Solo quedan 2 opciones",
       "submit-to-sort": "Sortear",
-      "ask-header": "Cual prefieres?",
-      "results-header": "Tu lista prioritzada",
+      "ask-header": "Cuál eliges?",
+      "results-header": "Tu lista priorizada",
       "explicit-count": "Numero de comparaciones: ",
-      "start-over-fresh-button": "reempezar de nuevo (crear lista nueva)",
+      "start-over-fresh-button": "Volver a empezar (crear lista nueva)",
       "start-over-same-button": "reempezar de nuevo (la misma lista)",
-      "download-list": "Descargar Lista",
+      "download-list": "Descargar lista",
     },
 
     cat: {
+      "menu-home" : "Inici",
+      "menu-create" : "Crear una llista",
+      "menu-contact": "Contacte",
       "create-a-list": "Fes una llista",
 
-      "input-header": "Fes una llista de les coses que vols sortear",
-      "trim-button": "Recorte la llista",
-      "discard-header": "Vols aquest?",
-      "discard-button": "Quita aquest?",
-      "keep-in-list-button": "Guarda?",
+      "input-header": "Escríu una llista de cosas per ordenar",
+      "trim-button": "Retallar llista abans d'ordenar",
+      "discard-header": "Descartar o conserver aquest item?",
+      "discard-button": "Descartar",
+      "keep-in-list-button": "Conservar",
       "2left": "Només quedan dues opciones",
       "submit-to-sort": "Sortear",
-      "ask-header": "Quina prefereixis?",
+      "ask-header": "Quin esculls?",
       "results-header": "La teva llista prioritzada",
       "explicit-count": "Nombre de comparacions requerits: ",
-      "start-over-fresh-button": "comença de nou (crea llista nova)",
+      "start-over-fresh-button": "Tornar a començar (crear llista nova)",
       "start-over-same-button": "comença de nou (la mateixa llista)",
-      "download-list": "Descargar Llista",
+      "download-list": "Descarregar lista",
     },
   };
 
