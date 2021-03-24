@@ -266,9 +266,11 @@ $(function () {
       "ask-header": "Which do you choose?",
       "results-header": "Your prioritised list",
       "explicit-count": "Total number of comparisons needed: ",
-      "start-over-fresh-button": "start over with fresh list",
+      "start-over-fresh-button": "start over",
       "start-over-same-button": "start over with same list",
       "download-list": "Download List",
+      "info": "A cuorum project",
+      "contact":"info at cuorum dot org"
     },
 
     es: {
@@ -290,6 +292,8 @@ $(function () {
       "start-over-fresh-button": "Volver a empezar (crear lista nueva)",
       "start-over-same-button": "reempezar de nuevo (la misma lista)",
       "download-list": "Descargar lista",
+      "info": "Un proyecto de cuorum",
+      "contact":"info arroba cuorum punto org"
     },
 
     cat: {
@@ -311,6 +315,8 @@ $(function () {
       "start-over-fresh-button": "Tornar a començar (crear llista nova)",
       "start-over-same-button": "comença de nou (la mateixa llista)",
       "download-list": "Descarregar lista",
+      "info": "Un projecte de cuorum",
+      "contact":"info arroba cuorum punt org"
     },
   };
 
