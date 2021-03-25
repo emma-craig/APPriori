@@ -256,7 +256,7 @@ $(function () {
       "menu-create": "Create a list",
       "menu-contact": "Contact",
       "create-a-list": "Create a list",
-      "input-header": "Type a list of items to be sorted, line by line",
+      "input-header": "Type a list of items to be sorted",
       "trim-button": "Trim list before sorting",
       "discard-header": "Discard this one?",
       "discard-button": "Discard?",
@@ -302,7 +302,7 @@ $(function () {
       "menu-contact": "Contacte",
       "create-a-list": "Fes una llista",
 
-      "input-header": "Escríu una llista de cosas per ordenar",
+      "input-header": "Escriu una llista de cosas per ordenar",
       "trim-button": "Retallar llista abans d'ordenar",
       "discard-header": "Descartar o conserver aquest item?",
       "discard-button": "Descartar",

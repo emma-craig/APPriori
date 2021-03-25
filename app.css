@@ -448,6 +448,7 @@ textarea:focus {
   height: 32px;
   left: -5px;
   opacity: 0;
+  color: whitesmoke;
   /* hide this */
   position: absolute;
   top: -7px;
@@ -461,6 +462,7 @@ textarea:focus {
   background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   opacity: 0.55s ease;
   background: #070707;
+
   border-radius: 3px;
   display: block;
   height: 4px;
@@ -484,9 +486,16 @@ textarea:focus {
  * Transform all the slices of hamburger
  * into a crossmark.
  */
+
+#menuToggle input {
+  color: whitesmoke !important;
+  background-color: whitesmoke;
+}
+
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
+
   background: #232323;
 }
 
@@ -521,7 +530,7 @@ textarea:focus {
 #menu {
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  background-color: black;
+  background-color: grey;
   /* background-image: url("gradienta-gwE9vXSi7Xw-unsplash.jpg"); */
   background-size: 100% auto;
   display: flex;
