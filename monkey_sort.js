@@ -258,6 +258,7 @@ $(function () {
       "create-a-list": "Create a list",
       "input-header": "Type a list of items to be sorted",
       "trim-button": "Trim list before sorting",
+      "sort-now-button": "Sort NOW",
       "discard-header": "Discard this one?",
       "discard-button": "Discard?",
       "keep-in-list-button": "Keep?",
@@ -281,6 +282,7 @@ $(function () {
 
       "input-header": "Escribe una lista de cosas para ordenar",
       "trim-button": "Recortar lista antes de ordenar",
+      "sort-now-button": "Ordenar YA",
       "discard-header": "Descartar o conserver este tem?",
       "discard-button": "Descartar",
       "keep-in-list-button": "Conservar",
@@ -306,6 +308,7 @@ $(function () {
       "trim-button": "Retallar llista abans d'ordenar",
       "discard-header": "Descartar o conserver aquest item?",
       "discard-button": "Descartar",
+      "sort-now-button": "Ordenar JA",
       "keep-in-list-button": "Conservar",
       "2left": "Només quedan dues opciones",
       "submit-to-sort": "Sortear",

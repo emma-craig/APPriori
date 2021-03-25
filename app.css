@@ -153,7 +153,7 @@ body {
 ol > li {
   list-style-type: decimal;
   text-align: left;
-  font-family: "Reenie Beanie", cursive;
+  /* font-family: "Reenie Beanie", cursive; */
 }
 
 h1 {
@@ -210,7 +210,7 @@ h3 span {
   /* background-image: url("white-paper-background.jpg"); */
   border: none;
   box-shadow: 0 0.4rem 1.4rem 0 gray;
-  font-family: "Reenie Beanie", cursive;
+  /* font-family: "Reenie Beanie", cursive; */
   font-size: 3rem;
   height: 60vh;
   margin: 3rem auto;
@@ -329,6 +329,7 @@ finish-buttons {
 
 /* BUTTONS */
 .btn {
+  border: 0.1rem solid darkgrey;
   /* border: 0.1rem solid #BBDEF0; */
   background-color: rgba(255, 99, 71, 0.678);
   border-radius: 25px;
@@ -343,7 +344,7 @@ finish-buttons {
 }
 
 .big-btn {
-  /* border: 0.1rem solid #BBDEF0; */
+  border: 0.1rem solid #BBDEF0;
   background-color: rgba(255, 99, 71, 0.678);
   border-radius: 25px;
   color: whitesmoke;
