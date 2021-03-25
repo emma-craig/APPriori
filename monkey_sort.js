@@ -256,7 +256,7 @@ $(function () {
       "menu-create": "Create a list",
       "menu-contact": "Contact",
       "create-a-list": "Create a list",
-      "input-header": "Type a list of items to be sorted",
+      "input-header": "Type a list of items to be sorted, line by line",
       "trim-button": "Trim list before sorting",
       "discard-header": "Discard this one?",
       "discard-button": "Discard?",
@@ -269,8 +269,8 @@ $(function () {
       "start-over-fresh-button": "start over",
       "start-over-same-button": "start over with same list",
       "download-list": "Download List",
-      "info": "A cuorum project",
-      "contact":"info at cuorum dot org"
+      info: "A cuorum project",
+      contact: "info at cuorum dot org",
     },
 
     es: {
@@ -292,8 +292,8 @@ $(function () {
       "start-over-fresh-button": "Volver a empezar",
       "start-over-same-button": "reempezar de nuevo (la misma lista)",
       "download-list": "Descargar lista",
-      "info": "Un proyecto de cuorum",
-      "contact":"info arroba cuorum punto org"
+      info: "Un proyecto de cuorum",
+      contact: "info arroba cuorum punto org",
     },
 
     cat: {
@@ -315,8 +315,8 @@ $(function () {
       "start-over-fresh-button": "Tornar a començar",
       "start-over-same-button": "comença de nou (la mateixa llista)",
       "download-list": "Descarregar lista",
-      "info": "Un projecte de cuorum",
-      "contact":"info arroba cuorum punt org"
+      info: "Un projecte de cuorum",
+      contact: "info arroba cuorum punt org",
     },
   };
 
