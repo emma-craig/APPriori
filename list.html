@@ -29,25 +29,27 @@
           <span></span>
 
           <ul id="menu">
-            <a href="index.html"><li  key="menu-home" class="text lang">Home</li></a>
-            <a href="list.html"><li key="menu-create" class="text lang">Create a List</li></a>
-            <a href="info.html"><li key="menu-info" class="text lang">Info</li></a>
-            <a href="contact.html"><li key="menu-contact" class="text lang">Contact</li></a>
+            <a href="index.html"
+              ><li key="menu-home" class="text lang">Home</li></a
+            >
+            <a href="list.html"
+              ><li key="menu-create" class="text lang">Create a List</li></a
+            >
+            <a href="info.html"
+              ><li key="menu-info" class="text lang">Info</li></a
+            >
+            <a href="contact.html"
+              ><li key="menu-contact" class="text lang">Contact</li></a
+            >
           </ul>
         </div>
       </nav>
 
       <div>
         <ul id="lang-selector">
-          <li id="es" class="translate">
-            ESP
-          </li>
-          <li id="cat" class="translate">
-            CAT
-          </li>
-          <li id="en" class="translate">
-            ENG
-          </li>
+          <li id="es" class="translate">ESP</li>
+          <li id="cat" class="translate">CAT</li>
+          <li id="en" class="translate">ENG</li>
         </ul>
       </div>
 
@@ -56,7 +58,7 @@
           <!-- <div class="glass-wrap"><div class = "glass">Haz una lista de las cosas que quieres ordenar</div>
         </div>   -->
 
-        Type a list of items to be sorted
+          <h2>Type a list of items to be sorted</h2>
         </div>
         <div class="notepad-wrapper">
           <textarea id="input-items" class="flex-column textarea"></textarea>
@@ -64,7 +66,7 @@
 
         <div>
           <a id="discard-button" class="btn lang text" key="trim-button">
-           Trim list before sorting
+            Trim list before sorting
           </a>
           <a id="sort-now-button" class="btn lang text" key="sort-now-button">
             Sort NOW
@@ -73,7 +75,7 @@
       </div>
 
       <div id="discard-page" class="input hidden">
-        <div id="discard-header" key="discard-header" class="info text lang">
+        <div id="discard-header" class="info text lang">
           <!-- Which do you choose? -->
         </div>
         <h1 id="to-be-discarded" class="flex-center flex-column"></h1>
@@ -98,7 +100,7 @@
           <!-- <h3>Your list after trimming</h3>
           <div id="trimResults" class="flex-column textarea"></div> -->
           <div id="twoLeft" key="2left" class="text lang hidden">
-            Solo quedan 2 opciones
+            <h2>Solo quedan 2 opciones</h2>
           </div>
         </div>
         <!-- <div id="show-trimmed" ></div> -->
@@ -177,19 +179,11 @@
     <script type="text/javascript">
       function download() {
         var a = document.body.appendChild(document.createElement("a"));
-        a.download = "myList.pdf";
+        a.download = "myList.html";
         a.href =
-          "data:text/pdf," + document.getElementById("results_list").innerHTML;
+          "data:text/html," + document.getElementById("results_list").innerHTML;
         a.click(); //Trigger a click on the element
       }
-
-
-    
-
-
-
-
-
     </script>
   </body>
 </html>
