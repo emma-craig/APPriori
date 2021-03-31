@@ -60,8 +60,9 @@
         </div>   -->
 
           <h2 key="input-header" class="text lang">
-            Type a list of items to be sorted
+            Type a list of items to be sorted.
           </h2>
+          <h4>Minimum number of items = 2.</h4>
         </div>
         <div class="notepad-wrapper">
           <textarea
@@ -71,21 +72,35 @@
           ></textarea>
         </div>
 
-        <div>
-          <a
+        <div class="button-group">
+          <!-- <a
             id="discard-button"
             class="orange-button btn lang text"
             key="trim-button"
           >
             Trim list before sorting
-          </a>
-          <a
+          </a> -->
+          <button
+            id="discard-button"
+            class="orange-button btn lang text"
+            key="trim-button"
+          >
+            Trim list before sorting
+          </button>
+          <!-- <a
             id="sort-now-button"
             class="green-button btn lang text"
             key="sort-now-button"
           >
             Sort NOW
-          </a>
+          </a> -->
+          <button
+            id="sort-now-button"
+            class="green-button btn lang text"
+            key="sort-now-button"
+          >
+            Sort NOW
+          </button>
         </div>
       </div>
 
@@ -141,7 +156,7 @@
         <h2 key="ask-header" class="text lang">Which do you choose?</h2>
         <br /><br /><br /><br />
 
-        <a id="ask_a" data-result=">" class="ask_answer yellow-button btn">
+        <a id="ask_a" data-result=">" class="ask_answer orange-button btn">
           <span />
         </a>
         <a id="ask_b" data-result="<" class="ask_answer orange-button btn">
@@ -157,8 +172,9 @@
         <!-- <p class="centered flex-column text lang" key="explicit-count">
           Numero de comparaciones: <span id="explicit_count"></span>
         </p> -->
-        <div id="finish-buttons">
+        <div class="button-group">
           <!-- <button id="start_over" class="btn">Start over</button> -->
+          <div id="editor"></div>
           <button
             class="green-button btn text lang"
             id="start_over_clean"
@@ -173,7 +189,7 @@
             class="btn text lang"
             key="download-list"
           > -->
-          <div id="editor"></div>
+
           <button
             onclick="javascript:createPdf()"
             id="cmd"

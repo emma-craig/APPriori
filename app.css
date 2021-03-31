@@ -287,7 +287,7 @@ discard-page {
   padding: 1.5rem;
 }
 
-finish-buttons {
+.buttons-group {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -627,6 +627,10 @@ textarea:focus {
     width: auto;
   }
 
+  .button-group {
+    flex-direction: column;
+  }
+
   .img-flag {
     width: 2rem;
   }
@@ -643,5 +647,3 @@ textarea:focus {
     font-size: 2rem;
   }
 }
-
-/*# sourceMappingURL=app.css.map */
