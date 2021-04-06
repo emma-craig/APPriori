@@ -108,13 +108,16 @@ body {
 }
 
 * {
-  /* box-sizing: border-box; */
   color: #051d1d;
   font-family: "Akaya Kanadaka", cursive;
   font-family: monospace;
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 .input {
@@ -130,12 +133,9 @@ body {
 }
 
 .container {
-  /* width: 100vw;
-  height: 100vh; */
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  /* max-width: 80rem; */
+
   margin: 0 auto;
   padding: 15px;
 }
@@ -144,16 +144,9 @@ body {
   width: 100%;
 }
 
-/* #trimResults , #results {
-  width: 50vw;
-  height: 30vh;
-  background-color: blanchedalmond;
-  margin: 4rem auto;
-} */
 ol > li {
   list-style-type: decimal;
   text-align: left;
-  /* font-family: "Reenie Beanie", cursive; */
 }
 
 h1 {
@@ -172,7 +165,6 @@ h2 {
   font-size: 4.2rem;
   margin: 4rem auto 2rem auto;
   font-weight: 700;
-  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
 }
 
 h3 {
@@ -204,15 +196,13 @@ h3 span {
     #abced4 81px,
     transparent 81px
   );
-  /*,
-    linear-gradient(#eee 0.1em, transparent 0.1em); */
+
   background-size: 100% 1.6em;
-  /* background-image: url("white-paper-background.jpg"); */
   border: none;
   box-shadow: 0 0.4rem 1.4rem 0 gray;
-  /* font-family: "Reenie Beanie", cursive; */
+
   font-size: 3rem;
-  height: 60vh;
+  height: 50vh;
   margin: 3rem auto;
   overflow: auto;
   padding: 4.2rem 0.5rem 1rem 11rem;
@@ -261,22 +251,6 @@ lang-selector > li:hover {
   cursor: pointer;
 }
 
-/* .textarea {
-  font-size: 4rem;
-  padding: 5rem 0.5rem;
-  box-shadow: 0 0.4rem 1.4rem 0 #f08700;
-  width: 60vw;
-  height: 60vh;
-  margin: 0 auto;
-
-  font-family: monospace;
-} */
-/* #to-be-discarded {
-  font-size: 2rem;
-  margin: 4rem 0;
-  border: 5px;
-
-} */
 discard-page {
   display: flex;
   justify-content: space-around;
@@ -292,6 +266,10 @@ discard-page {
   display: flex;
   justify-content: center;
   width: 100vw;
+}
+
+#to-be-discarded {
+  margin-top: 20vh;
 }
 
 /* UTILITIES */
@@ -330,8 +308,7 @@ discard-page {
 /* BUTTONS */
 .btn {
   border: 0.1rem solid darkgrey;
-  /* border: 0.1rem solid #BBDEF0; */
-  /* background-color: rgba(255, 99, 71, 0.678); */
+
   border-radius: 25px;
 
   font-size: 2rem;
@@ -346,15 +323,20 @@ discard-page {
 .orange-button {
   background-color: #ff652f;
   color: whitesmoke;
+ 
 }
 .yellow-button {
   background-color: #ffe400;
   color: #051d1d;
+  
 }
 .green-button {
   background-color: #14a76c;
   color: whitesmoke;
+  
 }
+
+
 
 .big-btn {
   border: 0.1rem solid #bbdef0;
@@ -373,9 +355,7 @@ discard-page {
 .big-btn:hover {
   color: tomato;
 }
-.info {
-  font-size: 2rem;
-}
+
 a:focus,
 button:focus,
 input:focus,
@@ -428,6 +408,10 @@ textarea:focus {
   list-style-type: decimal;
   margin: 0 auto;
   width: 400px;
+}
+
+#twoLeft h2 {
+  margin: 10vh auto;
 }
 
 #explicit_count {
@@ -531,8 +515,9 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 0;
+
   /* background-image: "./yellow-background.jpg"; */
 }
 
@@ -545,7 +530,6 @@ textarea:focus {
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
   background-color: grey;
-  /* background-image: url("gradienta-gwE9vXSi7Xw-unsplash.jpg"); */
   background-size: 100% auto;
   display: flex;
   flex-direction: column;
@@ -553,7 +537,6 @@ textarea:focus {
   justify-content: center;
   list-style-type: none;
   margin: -100px 0 0 -50px;
-  /* padding-top: 125px; */
   padding: 50px;
   position: absolute;
   transform-origin: 0% 0%;
@@ -566,6 +549,11 @@ textarea:focus {
   padding: 0 5vw 2vh 0;
   font-size: 3.5rem;
   color: white;
+}
+
+.info {
+  font-size: 4rem;
+  padding-top: 40vh;
 }
 
 /* media queries */
@@ -586,7 +574,6 @@ textarea:focus {
     font-size: 3.2rem;
     margin-bottom: 2rem;
     font-weight: 700;
-    /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
   }
 
   h3 {
@@ -614,16 +601,11 @@ textarea:focus {
   }
 
   .btn {
-    /* border: 0.1rem solid #BBDEF0; */
-    /* background-color: white;
-    border-radius: 25px;
-    color: gray; */
     font-size: 1.5rem;
     font-weight: bold;
     margin: 3rem;
     padding: 1.5rem;
-    /* text-align: center;
-    text-decoration: none; */
+
     width: auto;
   }
 

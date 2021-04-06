@@ -143,9 +143,7 @@ $(function () {
     lines = [...new Set(lines)];
     localStorage.setItem("lines", [...lines]);
 
-    // var Uniq_lines = lines.filter(function (elem, index, self) {
-    //   return index === self.indexOf(elem);
-    // });
+
 
     $("#to-be-discarded").html(lines[count]);
 
@@ -161,13 +159,10 @@ $(function () {
       console.log("items", items);
 
       localStorage.setItem("items", [...items]);
-      // $("#trimResults").text(items).show();
 
       items.length === 2 ? $("#twoLeft").show() : null;
 
       if (count === lines.length || items.length === 2) {
-        // $("#keep-in-list-button").prop('disabled', true);
-        // $("#discard-from-list-button").prop('disabled', true);
         $("#discard-header").hide();
         $("#to-be-discarded").hide();
         $("#keep-in-list-button").hide();
