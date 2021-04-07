@@ -154,6 +154,7 @@ h1 {
   font-family: "Abril Fatface", cursive;
   font-size: 10.4rem;
   margin: 5rem auto;
+  max-width: 80vw;
 }
 
 h1 > span {
