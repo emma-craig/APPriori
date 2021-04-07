@@ -625,8 +625,6 @@ textarea:focus {
   }
 
   .info {
-    font-size: 4rem;
-    padding-top: 40vh;
     font-size: 3rem;
   }
 }
