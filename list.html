@@ -63,12 +63,12 @@
           <h2 key="input-header" class="text lang">
             Type a list of items to be sorted.
           </h2>
-          <h4>Minimum number of items = 2.</h4>
         </div>
         <div class="notepad-wrapper">
           <textarea
             id="input-items"
-            class="flex-column textarea"
+            key="placeholder"
+            class="flex-column textarea text lang"
             placeholder="Enter each item on a new line"
           ></textarea>
         </div>
@@ -201,7 +201,7 @@
           elementHandlers: specialElementHandlers,
         });
         doc.save("APPriori-results-list.pdf");
-        window.location.replace("index.html").reload();
+        // window.location.replace("index.html").reload();
         lines = [];
         items = [];
       }

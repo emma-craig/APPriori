@@ -143,8 +143,6 @@ $(function () {
     lines = [...new Set(lines)];
     localStorage.setItem("lines", [...lines]);
 
-
-
     $("#to-be-discarded").html(lines[count]);
 
     $("#keep-in-list-button").show();
@@ -252,6 +250,7 @@ $(function () {
       "menu-contact": "Contact",
       "create-a-list": "Create a list",
       "input-header": "Type a list of items to be sorted",
+      placeholder: "Enter each item on a new line",
       "trim-button": "Trim list before sorting",
       "sort-now-button": "Sort NOW",
       "discard-header": "Discard this one?",
@@ -276,13 +275,14 @@ $(function () {
       "create-a-list": "Haz una lista",
 
       "input-header": "Escribe una lista de cosas para ordenar",
+      placeholder: "Separar cada ítem con un salto de línea",
       "trim-button": "Recortar lista antes de ordenar",
       "sort-now-button": "Ordenar YA",
       "discard-header": "Descartar o conserver este tem?",
       "discard-button": "Descartar",
       "keep-in-list-button": "Conservar",
       "2left": "Solo quedan 2 opciones",
-      "submit-to-sort": "Sortear",
+      "submit-to-sort": "Ordenar",
       "ask-header": "Cuál eliges?",
       "results-header": "Tu lista priorizada",
       "explicit-count": "Numero de comparaciones: ",
@@ -300,13 +300,14 @@ $(function () {
       "create-a-list": "Fes una llista",
 
       "input-header": "Escriu una llista de cosas per ordenar",
+      placeholder: "Separar cada item amb un salt de línia.",
       "trim-button": "Retallar llista abans d'ordenar",
       "discard-header": "Descartar o conserver aquest item?",
       "discard-button": "Descartar",
       "sort-now-button": "Ordenar JA",
       "keep-in-list-button": "Conservar",
       "2left": "Només quedan dues opciones",
-      "submit-to-sort": "Sortear",
+      "submit-to-sort": "Ordenar",
       "ask-header": "Quin esculls?",
       "results-header": "La teva llista prioritzada",
       "explicit-count": "Nombre de comparacions requerits: ",
