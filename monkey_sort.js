@@ -82,6 +82,99 @@ function quickSort(x, matrix) {
 }
 
 $(function () {
+  var arrLang = {
+    en: {
+      "menu-home": "Home",
+      "menu-create": "Create a list",
+      "menu-contact": "Contact",
+      "create-a-list": "Create a list",
+      "input-header": "Type a list of items to be sorted",
+      "place-holder": "Enter each item on a new line",
+      "trim-button": "Trim list before sorting",
+      "sort-now-button": "Sort NOW",
+      "discard-header": "Discard this one?",
+      "discard-button": "Discard?",
+      "keep-in-list-button": "Keep?",
+      "2left": "You only have two items left in the list",
+      "submit-to-sort": "Sort",
+      "ask-header": "Which do you choose?",
+      "results-header": "Your prioritised list",
+      "explicit-count": "Total number of comparisons needed: ",
+      "start-over-fresh-button": "start over",
+      "start-over-same-button": "start over with same list",
+      "download-list": "Download List",
+      info: "A cuorum project",
+      contact: "info at cuorum dot org",
+    },
+
+    es: {
+      "menu-home": "Inicio",
+      "menu-create": "Crear una lista",
+      "menu-contact": "Contacto",
+      "create-a-list": "Crear una lista",
+
+      "input-header": "Escribe una lista de cosas para ordenar",
+      "place-holder": "Separar cada ítem con un salto de línea",
+      "trim-button": "Recortar lista antes de ordenar",
+      "sort-now-button": "Ordenar YA",
+      "discard-header": "Descartar o conserver este tem?",
+      "discard-button": "Descartar",
+      "keep-in-list-button": "Conservar",
+      "2left": "Solo quedan 2 opciones",
+      "submit-to-sort": "Ordenar",
+      "ask-header": "Cuál eliges?",
+      "results-header": "Tu lista priorizada",
+      "explicit-count": "Numero de comparaciones: ",
+      "start-over-fresh-button": "Volver a empezar",
+      "start-over-same-button": "reempezar de nuevo (la misma lista)",
+      "download-list": "Descargar lista",
+      info: "Un proyecto de cuorum",
+      contact: "info arroba cuorum punto org",
+    },
+
+    cat: {
+      "menu-home": "Inici",
+      "menu-create": "Crear una llista",
+      "menu-contact": "Contacte",
+      "create-a-list": "Crear una llista",
+
+      "input-header": "Escriu una llista de cosas per ordenar",
+      "place-holder": "Separar cada item amb un salt de línia.",
+      "trim-button": "Retallar llista abans d'ordenar",
+      "discard-header": "Descartar o conserver aquest item?",
+      "discard-button": "Descartar",
+      "sort-now-button": "Ordenar JA",
+      "keep-in-list-button": "Conservar",
+      "2left": "Només quedan dues opciones",
+      "submit-to-sort": "Ordenar",
+      "ask-header": "Quin esculls?",
+      "results-header": "La teva llista prioritzada",
+      "explicit-count": "Nombre de comparacions requerits: ",
+      "start-over-fresh-button": "Tornar a començar",
+      "start-over-same-button": "comença de nou (la mateixa llista)",
+      "download-list": "Descarregar lista",
+      info: "Un projecte de cuorum",
+      contact: "info arroba cuorum punt org",
+    },
+  };
+  //on load
+  var lang = localStorage.getItem("lang");
+  console.log("language at load:", lang);
+
+  $(".lang").each(function (index, element) {
+    var lang = localStorage.getItem("lang");
+    console.log("lang in function", lang);
+    console.log("value of this", this);
+    console.log("value of index", index);
+    console.log("value of element", element);
+
+    if ($(element).is("textarea")) {
+      $(element).attr("placeholder", arrLang[lang][$(element).attr("key")]);
+    } else {
+      $(element).text(arrLang[lang][$(element).attr("key")]);
+    }
+  });
+
   var matrix;
 
   var lines;
@@ -321,10 +414,14 @@ $(function () {
 
   $(".translate").click(function () {
     var lang = $(this).attr("id");
+    localStorage.setItem("lang", lang);
+
     console.log("language changed");
     console.log("language:", lang);
 
     $(".lang").each(function (index, element) {
+      var lang = localStorage.getItem("lang");
+      console.log("lang", lang);
       if ($(this).is("textarea")) {
         $(this).attr("placeholder", arrLang[lang][$(this).attr("key")]);
       } else {
