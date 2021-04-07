@@ -272,7 +272,7 @@ $(function () {
       "menu-home": "Inicio",
       "menu-create": "Crear una lista",
       "menu-contact": "Contacto",
-      "create-a-list": "Haz una lista",
+      "create-a-list": "Crear una lista",
 
       "input-header": "Escribe una lista de cosas para ordenar",
       placeholder: "Separar cada ítem con un salto de línea",
@@ -297,7 +297,7 @@ $(function () {
       "menu-home": "Inici",
       "menu-create": "Crear una llista",
       "menu-contact": "Contacte",
-      "create-a-list": "Fes una llista",
+      "create-a-list": "Crear una llista",
 
       "input-header": "Escriu una llista de cosas per ordenar",
       placeholder: "Separar cada item amb un salt de línia.",
