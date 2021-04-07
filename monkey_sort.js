@@ -250,7 +250,7 @@ $(function () {
       "menu-contact": "Contact",
       "create-a-list": "Create a list",
       "input-header": "Type a list of items to be sorted",
-      placeholder: "Enter each item on a new line",
+      "place-holder": "Enter each item on a new line",
       "trim-button": "Trim list before sorting",
       "sort-now-button": "Sort NOW",
       "discard-header": "Discard this one?",
@@ -275,7 +275,7 @@ $(function () {
       "create-a-list": "Crear una lista",
 
       "input-header": "Escribe una lista de cosas para ordenar",
-      placeholder: "Separar cada ítem con un salto de línea",
+      "place-holder": "Separar cada ítem con un salto de línea",
       "trim-button": "Recortar lista antes de ordenar",
       "sort-now-button": "Ordenar YA",
       "discard-header": "Descartar o conserver este tem?",
@@ -300,7 +300,7 @@ $(function () {
       "create-a-list": "Crear una llista",
 
       "input-header": "Escriu una llista de cosas per ordenar",
-      placeholder: "Separar cada item amb un salt de línia.",
+      "place-holder": "Separar cada item amb un salt de línia.",
       "trim-button": "Retallar llista abans d'ordenar",
       "discard-header": "Descartar o conserver aquest item?",
       "discard-button": "Descartar",
@@ -325,7 +325,21 @@ $(function () {
     console.log("language:", lang);
 
     $(".lang").each(function (index, element) {
-      $(this).text(arrLang[lang][$(this).attr("key")]);
+      if ($(this).is("textarea")) {
+        $(this).attr("placeholder", arrLang[lang][$(this).attr("key")]);
+      } else {
+        $(this).text(arrLang[lang][$(this).attr("key")]);
+      }
     });
   });
 });
+
+// var set_lang = function (dictionary) {
+//   $("[data-translate]").each(function(){
+//      if($(this).is( "input" )){
+//         $(this).attr('placeholder',dictionary[$(this).data("translate")] )
+//      } else{
+//          $(this).text(dictionary[$(this).data("translate")])
+//      }
+//   })
+// };
