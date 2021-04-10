@@ -165,6 +165,7 @@ $(function () {
   $(".lang").each(function (index, element) {
     var lang = localStorage.getItem("lang");
     console.log("lang in function", lang);
+    console.log("value of this", this);
     console.log("value of index", index);
     console.log("value of element", element);
 
