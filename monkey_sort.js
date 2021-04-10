@@ -160,6 +160,8 @@ $(function () {
     },
   };
   var lang = localStorage.getItem("lang");
+  lang === null ? (lang = "es") : (lang = lang);
+
   console.log("language at load:", lang);
 
   $(".lang").each(function (index, element) {
