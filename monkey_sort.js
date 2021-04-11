@@ -160,7 +160,7 @@ $(function () {
     },
   };
   var lang = localStorage.getItem("lang");
-  lang === null ? (lang = "en") : (lang = lang);
+  // lang === null ? (lang = "en") : (lang = lang);
 
   console.log("language at load:", lang);
 
@@ -187,11 +187,6 @@ $(function () {
   //////STRAIGHT TO SORT //////
 
   $("#sort-now-button").click(function () {
-    $("#input").hide();
-    $("#to-be-discarded").hide();
-    $("#discard-page").hide();
-    $("#ask").show();
-    $("#results").hide();
     var lines = [];
     var items = [];
     var count = 0;
@@ -205,14 +200,23 @@ $(function () {
       }
     });
     items = [...new Set(items)];
-    localStorage.setItem("items", [...items]);
-    console.log("items in sort now", items);
-    $("results").hide();
-    matrix = new ComparisonMatrix(items);
-    tryQuickSort();
+    if (items.length === 0) window.location.replace("list.html").reload(); // need error message
+    else {
+      $("#input").hide();
+      $("#to-be-discarded").hide();
+      $("#discard-page").hide();
+      $("#ask").show();
+      $("#results").hide();
+      console.log("OK");
+      localStorage.setItem("items", [...items]);
+      console.log("items in sort now", items);
+      $("results").hide();
+      matrix = new ComparisonMatrix(items);
+      tryQuickSort();
 
-    localStorage.setItem("items", [...items]);
-    console.log("items in sort now", items);
+      localStorage.setItem("items", [...items]);
+      console.log("items in sort now", items);
+    }
   });
 
   ///DISCARD DIV ///
@@ -238,6 +242,12 @@ $(function () {
     });
 
     lines = [...new Set(lines)];
+    console.log(lines.length);
+    lines.length === 2 ? $("#error").show() : console.log("OK");
+    // lines.length < 2
+    //   ? window.location.replace("list.html").reload()
+    //   : console.log("OK");
+
     localStorage.setItem("lines", [...lines]);
 
     $("#to-be-discarded").html(lines[count]);
