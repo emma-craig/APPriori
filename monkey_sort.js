@@ -200,7 +200,8 @@ $(function () {
       }
     });
     items = [...new Set(items)];
-    if (items.length === 0) window.location.replace("list.html").reload(); // need error message
+    if (items.length === 0) window.location.replace("list.html").reload();
+    // need error message
     else {
       $("#input").hide();
       $("#to-be-discarded").hide();
@@ -221,12 +222,6 @@ $(function () {
 
   ///DISCARD DIV ///
   $("#discard-button").click(function () {
-    $("#input").hide();
-    $("#to-be-discarded").show();
-    $("#discard-page").show();
-    $("#ask").hide();
-    $("#results").hide();
-
     var lines = [];
     var items = [];
     var count = 0;
@@ -243,36 +238,71 @@ $(function () {
 
     lines = [...new Set(lines)];
     console.log(lines.length);
-    lines.length === 2 ? $("#error").show() : console.log("OK");
-    // lines.length < 2
-    //   ? window.location.replace("list.html").reload()
-    //   : console.log("OK");
 
-    localStorage.setItem("lines", [...lines]);
+    $("#results").hide();
 
-    $("#to-be-discarded").html(lines[count]);
-
-    $("#keep-in-list-button").show();
-    $("#discard-from-list-button").show();
-
-    function nextQuestion() {
-      count++;
-
-      $("#to-be-discarded").html(lines[count]);
-      items = lines.filter((x) => x !== "*");
-
-      console.log("items", items);
+    if (lines.length === 2) {
+      items = [...new Set(lines)];
+      localStorage.setItem("items", [...items]);
+      console.log("items length:", items.length);
+      $("#input").hide();
+      $("#to-be-discarded").hide();
+      $("#discard-page").hide();
+      $("#ask").show();
+      $("results").hide();
+      matrix = new ComparisonMatrix(items);
+      tryQuickSort();
 
       localStorage.setItem("items", [...items]);
+      console.log("items in sort now", items);
+    } else if (lines.length === 1) {
+      items = [...new Set(lines)];
+      localStorage.setItem("items", [...items]);
+      console.log("items length =1");
+      $("#input").hide();
+      $("#to-be-discarded").hide();
+      $("#discard-page").hide();
+      $("#ask").hide();
+      $("results").hide();
+      matrix = new ComparisonMatrix(items);
+      tryQuickSort();
 
-      items.length === 2 ? $("#twoLeft").show() : null;
+      // localStorage.setItem("items", [...items]);
+      // console.log("items in sort now", items);
+    } else if (lines.length === 0) {
+      window.location.replace("list.html").reload();
+      console.log("OK");
+    } else {
+      localStorage.setItem("lines", [...lines]);
+      $("#input").hide();
+      $("#to-be-discarded").show();
+      $("#discard-page").show();
+      $("#ask").hide();
 
-      if (count === lines.length || items.length === 2) {
-        $("#discard-header").hide();
-        $("#to-be-discarded").hide();
-        $("#keep-in-list-button").hide();
-        $("#discard-from-list-button").hide();
-        $("#submit").show();
+      $("#to-be-discarded").html(lines[count]);
+
+      $("#keep-in-list-button").show();
+      $("#discard-from-list-button").show();
+
+      function nextQuestion() {
+        count++;
+
+        $("#to-be-discarded").html(lines[count]);
+        items = lines.filter((x) => x !== "*");
+
+        console.log("items", items);
+
+        localStorage.setItem("items", [...items]);
+
+        items.length === 2 ? $("#twoLeft").show() : null;
+
+        if (count === lines.length || items.length === 2) {
+          $("#discard-header").hide();
+          $("#to-be-discarded").hide();
+          $("#keep-in-list-button").hide();
+          $("#discard-from-list-button").hide();
+          $("#submit").show();
+        }
       }
     }
 
@@ -289,7 +319,7 @@ $(function () {
     });
   });
 
-  ///ASK DIV///
+  ///ASK DIV (sorting)///
   $("#submit").click(function (e) {
     e.preventDefault();
 
