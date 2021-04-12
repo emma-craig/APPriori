@@ -92,7 +92,7 @@ $(function () {
       "create-a-list": "Create a list",
       "input-header": "Type a list of items to be sorted",
       "place-holder": "Enter each item on a new line",
-      error: "Minimum number 0f items = 2",
+      error: "Minimum number of items = 2",
       "trim-button": "Trim list before sorting",
       "sort-now-button": "Sort NOW",
       "discard-header": "Discard this one?",
