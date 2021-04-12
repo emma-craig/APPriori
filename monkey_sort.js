@@ -83,7 +83,7 @@ function quickSort(x, matrix) {
 
 $(function () {
   //on load
-
+  $("#error").hide();
   var arrLang = {
     en: {
       "menu-home": "Home",
@@ -92,6 +92,7 @@ $(function () {
       "create-a-list": "Create a list",
       "input-header": "Type a list of items to be sorted",
       "place-holder": "Enter each item on a new line",
+      error: "Minimum number 0f items = 2",
       "trim-button": "Trim list before sorting",
       "sort-now-button": "Sort NOW",
       "discard-header": "Discard this one?",
@@ -117,6 +118,7 @@ $(function () {
 
       "input-header": "Escribe una lista de cosas para ordenar",
       "place-holder": "Separar cada ítem con un salto de línea",
+      error: "Número mínimo de ítems = 2",
       "trim-button": "Recortar lista antes de ordenar",
       "sort-now-button": "Ordenar YA",
       "discard-header": "Descartar o conserver este tem?",
@@ -142,6 +144,7 @@ $(function () {
 
       "input-header": "Escriu una llista de cosas per ordenar",
       "place-holder": "Separar cada item amb un salt de línia.",
+      error: "Número mínim d'items = 2",
       "trim-button": "Retallar llista abans d'ordenar",
       "discard-header": "Descartar o conserver aquest item?",
       "discard-button": "Descartar",
@@ -200,7 +203,19 @@ $(function () {
       }
     });
     items = [...new Set(items)];
-    if (items.length === 0) window.location.replace("list.html").reload();
+    if (items.length === 0) {
+      $("#input").hide();
+      $("#error").show();
+      // $("#textarea").attr("placeholder", "You cannot submit an empty list");
+      // $(this).text("You cannot submit an empty list");
+
+      var delay = 2000;
+      // var url = 'https://itsolutionstuff.com'
+      setTimeout(function () {
+        window.location.replace("list.html").reload();
+      }, delay);
+      // window.location.replace("list.html").reload();
+    }
     // need error message
     else {
       $("#input").hide();
@@ -269,9 +284,18 @@ $(function () {
 
       // localStorage.setItem("items", [...items]);
       // console.log("items in sort now", items);
-    } else if (lines.length === 0) {
-      window.location.replace("list.html").reload();
-      console.log("OK");
+    } else if (items.length === 0) {
+      $("#input").hide();
+      $("#error").show();
+      // $("#textarea").attr("placeholder", "You cannot submit an empty list");
+      // $(this).text("You cannot submit an empty list");
+
+      var delay = 2000;
+      // var url = 'https://itsolutionstuff.com'
+      setTimeout(function () {
+        window.location.replace("list.html").reload();
+      }, delay);
+      // window.location.replace("list.html").reload();
     } else {
       localStorage.setItem("lines", [...lines]);
       $("#input").hide();

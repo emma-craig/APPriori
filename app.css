@@ -333,7 +333,9 @@ discard-page {
   background-color: #14a76c;
   color: whitesmoke;
 }
-
+/* #error {
+  visibility: hidden;
+} */
 .big-btn {
   border: 0.1rem solid #bbdef0;
   background-color: rgba(255, 99, 71, 0.678);
