@@ -80,7 +80,6 @@ function quickSort(x, matrix) {
   }
   qsortPart(0, array.length - 1);
 }
-
 $(function () {
   //on load
   $("#error").hide();
@@ -303,7 +302,7 @@ $(function () {
 
       // localStorage.setItem("items", [...items]);
       // console.log("items in sort now", items);
-    } else if (items.length === 0) {
+    } else if (lines.length === 0) {
       $("#input").hide();
       $("#error").show();
       // $("#textarea").attr("placeholder", "You cannot submit an empty list");
