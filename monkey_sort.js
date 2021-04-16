@@ -97,7 +97,7 @@ $(function () {
       "discard-header": "Discard this one?",
       "discard-button": "Discard?",
       "keep-in-list-button": "Keep?",
-      "2left": "You only have two items left in the list",
+      "2left": "You only have 2 items left",
       "submit-to-sort": "Sort",
       "ask-header": "Which do you choose?",
       "results-header": "Your prioritised list",

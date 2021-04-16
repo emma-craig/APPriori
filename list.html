@@ -90,9 +90,11 @@
         </div>
       </div>
 
-      <h2 id="error" class="lang text" key="error">
-        Minimum number of items = 2
-      </h2>
+      <div>
+        <h2 id="error" class="lang text" key="error">
+          Minimum number of items = 2
+        </h2>
+      </div>
 
       <div id="discard-page" class="input hidden">
         <div id="discard-header" class="info text lang">
@@ -133,15 +135,14 @@
           <span />Keep
         </div> -->
         <div>
-          <div id="twoLeft" key="2left" class="lang hidden">
+          <div id="twoLeft" class="hidden flex-center">
             <br /><br />
-            <h2>You only have 2 items left</h2>
-            <br /><br />
+            <h2 key="2left" class="text lang">You only have 2 items left</h2>
           </div>
 
           <button
             id="submit"
-            class="btn orange-button lang hidden"
+            class="btn orange-button text lang hidden"
             key="submit-to-sort"
           >
             Sort
