@@ -164,6 +164,25 @@ $(function () {
   };
   var lang = localStorage.getItem("lang");
   // lang === null ? (lang = "en") : (lang = lang);
+  switch (lang) {
+    case "es":
+      $("#es").addClass("current-lang");
+      $("#en").removeClass("current-lang");
+      $("#cat").removeClass("current-lang");
+      break;
+    case "en":
+      $("#es").removeClass("current-lang");
+      $("#en").addClass("current-lang");
+      $("#cat").removeClass("current-lang");
+      break;
+    case "cat":
+      $("#es").removeClass("current-lang");
+      $("#en").removeClass("current-lang");
+      $("#cat").addClass("current-lang");
+      break;
+    default:
+      break;
+  }
 
   console.log("language at load:", lang);
 
@@ -408,6 +427,25 @@ $(function () {
     var lang = $(this).attr("id");
     localStorage.setItem("lang", lang);
 
+    switch (lang) {
+      case "es":
+        $("#es").addClass("current-lang");
+        $("#en").removeClass("current-lang");
+        $("#cat").removeClass("current-lang");
+        break;
+      case "en":
+        $("#es").removeClass("current-lang");
+        $("#en").addClass("current-lang");
+        $("#cat").removeClass("current-lang");
+        break;
+      case "cat":
+        $("#es").removeClass("current-lang");
+        $("#en").removeClass("current-lang");
+        $("#cat").addClass("current-lang");
+        break;
+      default:
+        break;
+    }
     console.log("language changed");
     console.log("language:", lang);
 
