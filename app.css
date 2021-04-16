@@ -33,7 +33,9 @@
 }
 
 body {
+  width: 100vw;
   height: 100vh;
+
   background-color: lemonchiffon;
 }
 
@@ -295,7 +297,6 @@ h3 span {
 #twoLeft {
   padding: 10px;
   margin-bottom: 3rem;
-  
 }
 
 #submit {
@@ -467,9 +468,6 @@ textarea:focus {
 
 /* media queries */
 @media (max-width: 800px) {
-  /* #wrapper {
-    width: 100vw;
-  } */
   h1 {
     color: navy;
     font-family: "Abril Fatface", cursive;
