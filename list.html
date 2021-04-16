@@ -4,11 +4,6 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/png" href="favicon.png" />
 
-
-
-
-
-    
     <title>APPriori</title>
     <meta charset="utf-8" />
     <script
@@ -98,70 +93,80 @@
       <h2 id="error" class="lang text" key="error">
         Minimum number of items = 2
       </h2>
-      <!--  <button
-          class="green-button btn text lang"
-          id="start_over_clean_2"
-          key="start-over-fresh-button-2"
-        >
-          Start over
-        </button>
-       -->
+
       <div id="discard-page" class="input hidden">
         <div id="discard-header" class="info text lang">
           <!-- Which do you choose? -->
         </div>
         <h1 id="to-be-discarded" class="flex-center flex-column"></h1>
-        <br /><br /><br />
 
-        <a
+        <div class="button-group">
+          <button
+            id="discard-from-list-button"
+            class="orange-button btn text lang"
+            key="discard-button"
+          >
+            <span />Discard
+          </button>
+
+          <button
+            id="keep-in-list-button"
+            key="keep-in-list-button"
+            class="green-button btn text lang"
+          >
+            <span />Keep
+          </button>
+        </div>
+
+        <!-- <div
           id="discard-from-list-button"
           class="orange-button btn text lang"
           key="discard-button"
         >
           <span />Discard
-        </a>
-        <a
+        </div> -->
+        <!-- <div
           id="keep-in-list-button"
           key="keep-in-list-button"
           class="green-button btn text lang"
-          ><span />Keep
-        </a>
+        >
+          <span />Keep
+        </div> -->
         <div>
-          <br /><br />
-
-          <div id="twoLeft" key="2left" class="text lang hidden">
-            <h2>Solo quedan 2 opciones</h2>
+          <div id="twoLeft" key="2left" class="lang hidden">
+            <br /><br />
+            <h2>You only have 2 items left</h2>
+            <br /><br />
           </div>
-        </div>
 
-        <br /><br /><br /><br />
-        <h2></h2>
-        <br /><br /><br /><br />
-        <div>
-          <a id="submit" class="big-btn text lang hidden" key="submit-to-sort">
-            Ordenar
-          </a>
-          <a
-            class="yellow-button btn text lang hidden"
-            id="start_over_clean-1"
-            key="start-over-fresh-button"
+          <button
+            id="submit"
+            class="btn orange-button lang hidden"
+            key="submit-to-sort"
           >
-            Start over
-          </a>
+            Sort
+
+            <!-- <a
+              class="yellow-button btn text lang hidden"
+              id="start_over_clean-1"
+              key="start-over-fresh-button"
+            >
+              Start over
+            </a> -->
+          </button>
         </div>
       </div>
-
       <div id="ask" class="input hidden">
         <br /><br />
         <h2 key="ask-header" class="text lang">Which do you choose?</h2>
         <br /><br /><br /><br />
 
-        <a id="ask_a" data-result=">" class="ask_answer orange-button btn">
+        <button id="ask_a" data-result=">" class="btn ask_answer orange-button">
           <span />
-        </a>
-        <a id="ask_b" data-result="<" class="ask_answer orange-button btn">
+        </button>
+        <button id="ask_b" data-result="<" class="btn ask_answer orange-button">
           <span />
-        </a>
+        </button>
       </div>
 
       <div id="results" class="hidden">
