@@ -185,10 +185,6 @@ a:hover {
   cursor: pointer;
 }
 
-.input {
-  height: 100vh;
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -468,6 +464,15 @@ textarea:focus {
 
 /* media queries */
 @media (max-width: 800px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  #input {
+    margin-top: 4rem;
+    height: 70vh;
+  }
   h1 {
     color: navy;
     font-family: "Abril Fatface", cursive;
