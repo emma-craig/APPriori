@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
-
 @keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;
@@ -16,12 +15,9 @@
     opacity: 1;
   }
 }
-
 .tracking-in-contract-bck {
-  -webkit-animation: tracking-in-contract-bck 2s
-    cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.61, 0.355, 1)
-    both;
+  -webkit-animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 :root {
@@ -35,13 +31,11 @@
 body {
   width: 100vw;
   height: 100vh;
-
   background-color: lemonchiffon;
 }
 
 * {
   color: #051d1d;
-  font-family: "Akaya Kanadaka", cursive;
   font-family: monospace;
   margin: 0;
   padding: 0;
@@ -58,17 +52,11 @@ body {
   user-select: none;
   z-index: 1;
 }
-
 #menuToggle a {
   text-decoration: none;
   color: #232323;
   transition: color 0.3s ease;
 }
-
-#menuToggle a:hover {
-  color: tomato;
-}
-
 #menuToggle input {
   -webkit-touch-callout: none;
   cursor: pointer;
@@ -76,21 +64,19 @@ body {
   height: 32px;
   left: -5px;
   opacity: 0;
-  color: whitesmoke;
   /* hide this */
   position: absolute;
   top: -7px;
   width: 40px;
   z-index: 2;
   /* and place it over the hamburger */
+  color: whitesmoke !important;
+  background-color: whitesmoke;
 }
-
-/* hamburger menu*/
 #menuToggle span {
   background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   opacity: 0.55s ease;
   background: #070707;
-
   border-radius: 3px;
   display: block;
   height: 4px;
@@ -102,6 +88,11 @@ body {
   z-index: 1;
 }
 
+#menuToggle a:hover {
+  color: tomato;
+}
+
+/* hamburger menu*/
 #menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
@@ -110,21 +101,10 @@ body {
   transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-
-#menuToggle input {
-  color: whitesmoke !important;
-  background-color: whitesmoke;
-}
-
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-
-  background: #232323;
+  background: whitesmoke;
 }
 
 #menuToggle input:checked ~ span:nth-last-child(3) {
@@ -139,21 +119,6 @@ body {
 /* slide menu in from the left */
 #menuToggle input:checked ~ ul {
   transform: none;
-}
-
-#home {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  /* justify-content: center; */
-  margin: 0;
-
-  /* background-image: "./yellow-background.jpg"; */
-}
-
-#home > a {
-  width: 35vw;
-  margin: 0 auto;
 }
 
 #menu {
@@ -174,32 +139,50 @@ body {
   transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1);
   width: 100%;
 }
-
 #menu li {
   padding: 0 5vw 2vh 0;
   font-size: 3.5rem;
-  color: white;
+  color: whitesmoke;
+}
+
+#lang-selector {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin-right: 2rem;
+}
+
+#lang-selector > li {
+  padding: 5px;
+  font-size: 2rem;
+  margin: 0 10px;
+}
+
+#lang-selector > li:hover {
+  cursor: pointer;
+  /* color: #f08700; */
+}
+
+.current-lang {
+  color: red;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* justify-content: center; */
+  margin: 0;
+  /* background-image: "./yellow-background.jpg"; */
+}
+
+#home > a {
+  width: 35vw;
+  margin: 0 auto;
 }
 
 a:hover {
   cursor: pointer;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-
-  margin: 0 auto;
-  padding: 15px;
-}
-
-.container > * {
-  width: 100%;
-}
-
-ol > li {
-  list-style-type: decimal;
-  text-align: left;
 }
 
 h1 {
@@ -226,35 +209,27 @@ h3 {
   font-weight: 500;
   margin: 4rem auto;
   text-align: center;
-  background-color: rgba(255, 99, 71, 0.678);
+  background-color: #ff652f;
   border-radius: 3rem;
   color: whitesmoke;
   width: fit-content;
   padding: 2rem;
 }
-
 h3 span {
   background-color: whitesmoke;
   border-radius: 30px;
   padding: 10px 15px;
 }
+
 /* notepaper */
 #input-items,
 #trimResults,
 #results_list {
   background-color: #fff;
-  background-image: linear-gradient(
-    90deg,
-    transparent 79px,
-    #abced4 79px,
-    #abced4 81px,
-    transparent 81px
-  );
-
+  background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px);
   background-size: 100% 1.6em;
   border: none;
   box-shadow: 0 0.4rem 1.4rem 0 gray;
-
   font-size: 3rem;
   height: 50vh;
   margin: 3rem auto;
@@ -269,25 +244,9 @@ h3 span {
   margin: 0 0 2rem 0;
 }
 
-#lang-selector {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  margin-right: 2rem;
-}
-
-#lang-selector > li {
-  padding: 5px;
-  font-size: 2rem;
-  margin: 0 10px;
-}
-
-#lang-selector > li:hover {
-  cursor: pointer;
-  /* color: #f08700; */
-}
-.current-lang {
-  color: red;
+ol > li {
+  list-style-type: decimal;
+  text-align: left;
 }
 
 #twoLeft {
@@ -307,13 +266,6 @@ discard-page {
 #discard-header {
   width: fit-content;
   padding: 1.5rem;
-}
-
-.buttons-group {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
 }
 
 #to-be-discarded {
@@ -356,9 +308,7 @@ discard-page {
 /* BUTTONS */
 .btn {
   border: 0.1rem solid darkgrey;
-
   border-radius: 25px;
-
   font-size: 2rem;
   font-weight: bold;
   margin: 1rem;
@@ -372,20 +322,20 @@ discard-page {
   background-color: #ff652f;
   color: whitesmoke;
 }
+
 .yellow-button {
   background-color: #ffe400;
   color: #051d1d;
 }
+
 .green-button {
   background-color: #14a76c;
   color: whitesmoke;
 }
-/* #error {
-  visibility: hidden;
-} */
+
 .big-btn {
   border: 0.1rem solid #bbdef0;
-  background-color: rgba(255, 99, 71, 0.678);
+  background-color: #ff652f;
   border-radius: 25px;
   color: whitesmoke;
   font-size: 5rem;
@@ -398,7 +348,14 @@ discard-page {
 }
 
 .big-btn:hover {
-  color: tomato;
+  color: #ff652f;
+}
+
+.buttons-group {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 
 a:focus,
@@ -414,10 +371,10 @@ textarea:focus {
   transform: translateY(-0.1rem);
   transition: transform 150ms;
 }
+
 /* #lang-selector > li:focus {
   color: red;
 } */
-
 .btn[disabled]:hover {
   box-shadow: none;
   cursor: not-allowed;
@@ -473,6 +430,7 @@ textarea:focus {
     margin-top: 4rem;
     height: 70vh;
   }
+
   h1 {
     color: navy;
     font-family: "Abril Fatface", cursive;
@@ -497,7 +455,6 @@ textarea:focus {
     margin-top: 10vh;
     text-align: center;
   }
-
   h3 span {
     background-color: whitesmoke;
     border-radius: 30px;
@@ -505,8 +462,8 @@ textarea:focus {
   }
 
   #input-items,
-  #trimResults,
-  #results_list {
+#trimResults,
+#results_list {
     font-size: 2rem;
     height: 45vh;
     margin: 4rem auto;
@@ -518,7 +475,6 @@ textarea:focus {
   .btn {
     font-size: 1.5rem;
     /* font-weight: bold; */
-
     padding: 1.5rem;
     /* 
     width: auto; */
@@ -544,3 +500,5 @@ textarea:focus {
     font-size: 3rem;
   }
 }
+
+/*# sourceMappingURL=app.css.map */
