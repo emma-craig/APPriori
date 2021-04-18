@@ -20,6 +20,10 @@
   animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   background-color: lemonchiffon;
   background-size: cover;
