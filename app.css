@@ -190,7 +190,7 @@ a:hover {
 }
 
 h1 {
-  color: navy;
+  color: #b23600;
   font-family: "Abril Fatface", cursive;
   font-size: 10.4rem;
   margin: 5rem auto;
@@ -436,7 +436,7 @@ textarea:focus {
   }
 
   h1 {
-    color: navy;
+    color: #b23600;
     font-family: "Abril Fatface", cursive;
     font-size: 4rem;
     margin-bottom: 2rem;
